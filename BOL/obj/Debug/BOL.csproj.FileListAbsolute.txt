@@ -1,0 +1,9 @@
+C:\Users\snach\source\repos\Project\BOL\bin\Debug\BOL.dll
+C:\Users\snach\source\repos\Project\BOL\bin\Debug\BOL.pdb
+C:\Users\snach\source\repos\Project\BOL\bin\Debug\DAL.dll
+C:\Users\snach\source\repos\Project\BOL\bin\Debug\DAL.pdb
+C:\Users\snach\source\repos\Project\BOL\obj\Debug\BOL.csproj.AssemblyReference.cache
+C:\Users\snach\source\repos\Project\BOL\obj\Debug\BOL.csproj.CoreCompileInputs.cache
+C:\Users\snach\source\repos\Project\BOL\obj\Debug\BOL.csproj.CopyComplete
+C:\Users\snach\source\repos\Project\BOL\obj\Debug\BOL.dll
+C:\Users\snach\source\repos\Project\BOL\obj\Debug\BOL.pdb
