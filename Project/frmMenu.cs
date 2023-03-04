@@ -26,8 +26,36 @@ namespace Project
 
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //frmLogin.ActiveForm.Select();
-            frmLogin.ActiveForm.Activate();
+            if(MessageBox.Show("¿Deséa finalizar la sesión?", Application.ProductName,
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                //Busca el formulario de Login para poder habilitarlo de nuevo.
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(frmLogin))
+                    {
+                        MessageBox.Show("Sesión Finalizada.", "Aviso",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        frm.Show();
+                        break;
+                    }
+                }
+            }
+           
+        }
+
+        private void btnFile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

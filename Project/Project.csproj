@@ -111,5 +111,26 @@
   <ItemGroup>
     <None Include="Resources\Splash_Screen_Logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Movie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Producer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Writer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catalog.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
