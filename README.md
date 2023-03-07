@@ -1,2 +1,0 @@
-# ProjectPacs
- Proyecto de Pacs
