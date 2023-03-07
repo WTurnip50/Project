@@ -1,0 +1,17 @@
+C:\Users\snach\source\repos\Project\DAL\bin\Debug\DAL.dll
+C:\Users\snach\source\repos\Project\DAL\bin\Debug\DAL.pdb
+C:\Users\snach\source\repos\Project\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\snach\source\repos\Project\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\snach\source\repos\Project\DAL\obj\Debug\DAL.dll
+C:\Users\snach\source\repos\Project\DAL\obj\Debug\DAL.pdb
+C:\Users\Israel\Documents\GitHub\Project\DAL\bin\Debug\DAL.dll
+C:\Users\Israel\Documents\GitHub\Project\DAL\bin\Debug\DAL.pdb
+C:\Users\Israel\Documents\GitHub\Project\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Israel\Documents\GitHub\Project\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Israel\Documents\GitHub\Project\DAL\obj\Debug\DAL.dll
+C:\Users\Israel\Documents\GitHub\Project\DAL\obj\Debug\DAL.pdb
+C:\Users\sketc\OneDrive\Documentos\PACS\PACS\Project\DAL\bin\Debug\DAL.dll
+C:\Users\sketc\OneDrive\Documentos\PACS\PACS\Project\DAL\bin\Debug\DAL.pdb
+C:\Users\sketc\OneDrive\Documentos\PACS\PACS\Project\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\sketc\OneDrive\Documentos\PACS\PACS\Project\DAL\obj\Debug\DAL.dll
+C:\Users\sketc\OneDrive\Documentos\PACS\PACS\Project\DAL\obj\Debug\DAL.pdb
