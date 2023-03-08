@@ -13,7 +13,8 @@ namespace DAL
         #region Singleton 
         private static volatile DataAccess instance = null;
         private static readonly object padlock = new object();
-        private string conString = "Data Source = JORDAN; Initial Catalog = PP2023; Integrated Security = true";
+        //private string conString = "Data Source = JORDAN; Initial Catalog = PP2023; Integrated Security = true"; Conexión Jordan
+        private string conString = "Data Source = DESKTOP-HO3IVR2; Initial Catalog = PP2023; Integrated Security = true"; // Conexión Isra
         
         private DataAccess() { }
 

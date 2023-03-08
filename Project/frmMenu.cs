@@ -68,15 +68,17 @@ namespace Project
 
         private void btnMovies_Click(object sender, EventArgs e)
         {
-            if (fma)
+            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmMovies);
+            if (frmo != null)
             {
-                foreach (Form frmo in Application.OpenForms)
+                foreach (Form frmOpen in Application.OpenForms)
                 {
-                    if (frmo.GetType() == typeof(frmMovies))
+                    if (frmOpen.GetType() == typeof(frmMovies))
                     {
-                        MessageBox.Show("Ya esta abierto", "Aviso",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        frmo.Show();
+                        //MessageBox.Show("Ya esta abierto", "Aviso",
+                        //    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        frmOpen.Focus();
+                        frmOpen.WindowState = FormWindowState.Maximized;
                         fma = true;
                         break;
                     }
@@ -91,27 +93,24 @@ namespace Project
                 frmMovies frm = new frmMovies();
                 frm.MdiParent = this;
                 frm.Show();
-                fma = true;
             }
+
         }
 
         private void btnWriter_Click(object sender, EventArgs e)
         {
-            if (fwa)
+            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmWriters);
+            if (frmo != null)
             {
-                foreach (Form frmo in Application.OpenForms)
+                foreach (Form frmOpen in Application.OpenForms)
                 {
-                    if (frmo.GetType() == typeof(frmWriters))
+                    if (frmOpen.GetType() == typeof(frmWriters))
                     {
-                        MessageBox.Show("Ya esta abierto", "Aviso",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        frmo.Show();
-                        fwa = true;
+                        //MessageBox.Show("Ya esta abierto", "Aviso",
+                        //    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        frmOpen.Focus();
+                        frmOpen.WindowState = FormWindowState.Maximized;
                         break;
-                    }
-                    else
-                    {
-                        fwa = false;
                     }
                 }
             }
@@ -120,27 +119,21 @@ namespace Project
                 frmWriters frm = new frmWriters();
                 frm.MdiParent = this;
                 frm.Show();
-                fwa = true;
             }
         }
 
         private void btnDirectors_Click(object sender, EventArgs e)
         {
-            if (fda)
+            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmDirectors);
+            if (frmo != null)
             {
-                foreach (Form frmo in Application.OpenForms)
+                foreach (Form frmOpen in Application.OpenForms)
                 {
-                    if (frmo.GetType() == typeof(frmDirectors))
+                    if (frmOpen.GetType() == typeof(frmDirectors))
                     {
-                        MessageBox.Show("Ya esta abierto", "Aviso",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        frmo.Show();
-                        fda = true;
+                        frmOpen.Focus();
+                        frmOpen.WindowState = FormWindowState.Maximized;
                         break;
-                    }
-                    else
-                    {
-                        fda = false;
                     }
                 }
             }
@@ -149,27 +142,21 @@ namespace Project
                 frmDirectors frm = new frmDirectors();
                 frm.MdiParent = this;
                 frm.Show();
-                fda = true;
             }
         }
 
         private void btnProducers_Click(object sender, EventArgs e)
         {
-            if (fpa)
+            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProducers);
+            if (frmo != null)
             {
-                foreach (Form frmo in Application.OpenForms)
+                foreach (Form frmOpen in Application.OpenForms)
                 {
-                    if (frmo.GetType() == typeof(frmProducers))
+                    if (frmOpen.GetType() == typeof(frmProducers))
                     {
-                        MessageBox.Show("Ya esta abierto", "Aviso",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        frmo.Show();
-                        fpa = true;
+                        frmOpen.Focus();
+                        frmOpen.WindowState = FormWindowState.Maximized;
                         break;
-                    }
-                    else
-                    {
-                        fpa = false;
                     }
                 }
             }
@@ -180,6 +167,8 @@ namespace Project
                 frm.Show();
                 fpa = true;
             }
+            
         }
+        
     }
 }

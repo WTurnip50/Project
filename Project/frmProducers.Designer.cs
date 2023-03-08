@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProducers));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvProducers = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.idProducerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.producerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnRefresh = new System.Windows.Forms.ToolStripButton();
             this.btnAdd = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
@@ -45,8 +45,8 @@
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducers)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.producerBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -82,9 +82,43 @@
             this.dgvProducers.Location = new System.Drawing.Point(0, 0);
             this.dgvProducers.Name = "dgvProducers";
             this.dgvProducers.ReadOnly = true;
+            this.dgvProducers.RowHeadersWidth = 51;
             this.dgvProducers.RowTemplate.Height = 24;
             this.dgvProducers.Size = new System.Drawing.Size(800, 423);
             this.dgvProducers.TabIndex = 0;
+            // 
+            // idProducerDataGridViewTextBoxColumn
+            // 
+            this.idProducerDataGridViewTextBoxColumn.DataPropertyName = "idProducer";
+            this.idProducerDataGridViewTextBoxColumn.HeaderText = "idProducer";
+            this.idProducerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idProducerDataGridViewTextBoxColumn.Name = "idProducerDataGridViewTextBoxColumn";
+            this.idProducerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idProducerDataGridViewTextBoxColumn.Visible = false;
+            this.idProducerDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // activoDataGridViewCheckBoxColumn
+            // 
+            this.activoDataGridViewCheckBoxColumn.DataPropertyName = "activo";
+            this.activoDataGridViewCheckBoxColumn.HeaderText = "activo";
+            this.activoDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
+            this.activoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.activoDataGridViewCheckBoxColumn.Visible = false;
+            this.activoDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // producerBindingSource
+            // 
+            this.producerBindingSource.DataSource = typeof(BOL.Producer);
             // 
             // toolStrip1
             // 
@@ -96,38 +130,11 @@
             this.btnAdd,
             this.btnEdit,
             this.toolStripButton4});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(4, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(285, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(290, 27);
             this.toolStrip1.TabIndex = 0;
-            // 
-            // idProducerDataGridViewTextBoxColumn
-            // 
-            this.idProducerDataGridViewTextBoxColumn.DataPropertyName = "idProducer";
-            this.idProducerDataGridViewTextBoxColumn.HeaderText = "idProducer";
-            this.idProducerDataGridViewTextBoxColumn.Name = "idProducerDataGridViewTextBoxColumn";
-            this.idProducerDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idProducerDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // activoDataGridViewCheckBoxColumn
-            // 
-            this.activoDataGridViewCheckBoxColumn.DataPropertyName = "activo";
-            this.activoDataGridViewCheckBoxColumn.HeaderText = "activo";
-            this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
-            this.activoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.activoDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // producerBindingSource
-            // 
-            this.producerBindingSource.DataSource = typeof(BOL.Producer);
             // 
             // btnRefresh
             // 
@@ -162,7 +169,7 @@
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton4.Size = new System.Drawing.Size(29, 24);
             this.toolStripButton4.Text = "toolStripButton4";
             // 
             // frmProducers
@@ -174,7 +181,6 @@
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "frmProducers";
             this.Text = "Productores";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmProducers_Load);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
@@ -182,9 +188,9 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producerBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.producerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

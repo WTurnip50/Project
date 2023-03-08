@@ -65,3 +65,11 @@ C:\Users\sketc\OneDrive\Documentos\PACS\PACS\Project\Project\obj\Debug\Project.f
 C:\Users\sketc\OneDrive\Documentos\PACS\PACS\Project\Project\obj\Debug\Project.frmAddProducer.resources
 C:\Users\sketc\OneDrive\Documentos\PACS\PACS\Project\Project\obj\Debug\Project.frmAddWriter.resources
 C:\Users\sketc\OneDrive\Documentos\PACS\PACS\Project\Project\obj\Debug\Project.test.resources
+C:\Users\Israel\Documents\GitHub\Project\Project\obj\Debug\Project.frmAddMovie.resources
+C:\Users\Israel\Documents\GitHub\Project\Project\obj\Debug\Project.frmAddProducer.resources
+C:\Users\Israel\Documents\GitHub\Project\Project\obj\Debug\Project.frmAddWriter.resources
+C:\Users\Israel\Documents\GitHub\Project\Project\obj\Debug\Project.frmDirectors.resources
+C:\Users\Israel\Documents\GitHub\Project\Project\obj\Debug\Project.frmMovies.resources
+C:\Users\Israel\Documents\GitHub\Project\Project\obj\Debug\Project.frmProducers.resources
+C:\Users\Israel\Documents\GitHub\Project\Project\obj\Debug\Project.frmWriters.resources
+C:\Users\Israel\Documents\GitHub\Project\Project\obj\Debug\Project.test.resources

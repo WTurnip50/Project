@@ -32,21 +32,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWriters));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvWriters = new System.Windows.Forms.DataGridView();
+            this.idWriterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.writerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnRefresh = new System.Windows.Forms.ToolStripButton();
             this.btnAdd = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.idWriterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.writerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWriters)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -82,9 +82,43 @@
             this.dgvWriters.Location = new System.Drawing.Point(0, 0);
             this.dgvWriters.Name = "dgvWriters";
             this.dgvWriters.ReadOnly = true;
+            this.dgvWriters.RowHeadersWidth = 51;
             this.dgvWriters.RowTemplate.Height = 24;
             this.dgvWriters.Size = new System.Drawing.Size(800, 423);
             this.dgvWriters.TabIndex = 0;
+            // 
+            // idWriterDataGridViewTextBoxColumn
+            // 
+            this.idWriterDataGridViewTextBoxColumn.DataPropertyName = "idWriter";
+            this.idWriterDataGridViewTextBoxColumn.HeaderText = "idWriter";
+            this.idWriterDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idWriterDataGridViewTextBoxColumn.Name = "idWriterDataGridViewTextBoxColumn";
+            this.idWriterDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idWriterDataGridViewTextBoxColumn.Visible = false;
+            this.idWriterDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // activoDataGridViewCheckBoxColumn
+            // 
+            this.activoDataGridViewCheckBoxColumn.DataPropertyName = "activo";
+            this.activoDataGridViewCheckBoxColumn.HeaderText = "activo";
+            this.activoDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
+            this.activoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.activoDataGridViewCheckBoxColumn.Visible = false;
+            this.activoDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // writerBindingSource
+            // 
+            this.writerBindingSource.DataSource = typeof(BOL.Writer);
             // 
             // toolStrip1
             // 
@@ -95,9 +129,9 @@
             this.btnAdd,
             this.btnEdit,
             this.toolStripButton4});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(4, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(294, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(300, 27);
             this.toolStrip1.TabIndex = 0;
             // 
             // btnRefresh
@@ -133,44 +167,20 @@
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton4.Size = new System.Drawing.Size(29, 24);
             this.toolStripButton4.Text = "toolStripButton4";
-            // 
-            // idWriterDataGridViewTextBoxColumn
-            // 
-            this.idWriterDataGridViewTextBoxColumn.DataPropertyName = "idWriter";
-            this.idWriterDataGridViewTextBoxColumn.HeaderText = "idWriter";
-            this.idWriterDataGridViewTextBoxColumn.Name = "idWriterDataGridViewTextBoxColumn";
-            this.idWriterDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idWriterDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // activoDataGridViewCheckBoxColumn
-            // 
-            this.activoDataGridViewCheckBoxColumn.DataPropertyName = "activo";
-            this.activoDataGridViewCheckBoxColumn.HeaderText = "activo";
-            this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
-            this.activoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.activoDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // writerBindingSource
-            // 
-            this.writerBindingSource.DataSource = typeof(BOL.Writer);
             // 
             // frmWriters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.toolStripContainer1);
+            this.MaximizeBox = false;
             this.Name = "frmWriters";
-            this.Text = "frmWriters";
+            this.Text = "Escritores";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmWriters_Load);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
@@ -178,9 +188,9 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWriters)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

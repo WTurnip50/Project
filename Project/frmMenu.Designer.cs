@@ -57,42 +57,47 @@
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnLogout});
+            this.archivoToolStripMenuItem.Image = global::Project.Properties.Resources.File;
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // btnLogout
             // 
+            this.btnLogout.Image = global::Project.Properties.Resources.LogOut;
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(171, 26);
+            this.btnLogout.Size = new System.Drawing.Size(224, 26);
             this.btnLogout.Text = "Cerrar Sesión";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnMovies
             // 
+            this.btnMovies.Image = global::Project.Properties.Resources.Movie;
             this.btnMovies.Name = "btnMovies";
-            this.btnMovies.Size = new System.Drawing.Size(77, 24);
+            this.btnMovies.Size = new System.Drawing.Size(99, 24);
             this.btnMovies.Text = "Peliculas";
             this.btnMovies.Click += new System.EventHandler(this.btnMovies_Click);
             // 
             // btnWriter
             // 
+            this.btnWriter.Image = global::Project.Properties.Resources.Writer;
             this.btnWriter.Name = "btnWriter";
-            this.btnWriter.Size = new System.Drawing.Size(84, 24);
+            this.btnWriter.Size = new System.Drawing.Size(106, 24);
             this.btnWriter.Text = "Escritores";
             this.btnWriter.Click += new System.EventHandler(this.btnWriter_Click);
             // 
             // btnDirectors
             // 
+            this.btnDirectors.Image = global::Project.Properties.Resources.Producer;
             this.btnDirectors.Name = "btnDirectors";
-            this.btnDirectors.Size = new System.Drawing.Size(89, 24);
+            this.btnDirectors.Size = new System.Drawing.Size(111, 24);
             this.btnDirectors.Text = "Directores";
             this.btnDirectors.Click += new System.EventHandler(this.btnDirectors_Click);
             // 
             // btnProducers
             // 
             this.btnProducers.Name = "btnProducers";
-            this.btnProducers.Size = new System.Drawing.Size(100, 24);
+            this.btnProducers.Size = new System.Drawing.Size(102, 24);
             this.btnProducers.Text = "Productores";
             this.btnProducers.Click += new System.EventHandler(this.btnProducers_Click);
             // 

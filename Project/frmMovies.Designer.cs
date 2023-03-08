@@ -88,6 +88,7 @@
             this.dgvMovies.Location = new System.Drawing.Point(0, 0);
             this.dgvMovies.Name = "dgvMovies";
             this.dgvMovies.ReadOnly = true;
+            this.dgvMovies.RowHeadersWidth = 51;
             this.dgvMovies.RowTemplate.Height = 24;
             this.dgvMovies.Size = new System.Drawing.Size(800, 423);
             this.dgvMovies.TabIndex = 0;
@@ -97,45 +98,57 @@
             // 
             this.idMovieDataGridViewTextBoxColumn.DataPropertyName = "idMovie";
             this.idMovieDataGridViewTextBoxColumn.HeaderText = "idMovie";
+            this.idMovieDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idMovieDataGridViewTextBoxColumn.Name = "idMovieDataGridViewTextBoxColumn";
             this.idMovieDataGridViewTextBoxColumn.ReadOnly = true;
             this.idMovieDataGridViewTextBoxColumn.Visible = false;
+            this.idMovieDataGridViewTextBoxColumn.Width = 125;
             // 
             // titleDataGridViewTextBoxColumn
             // 
             this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
             this.titleDataGridViewTextBoxColumn.HeaderText = "title";
+            this.titleDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
             this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.titleDataGridViewTextBoxColumn.Width = 125;
             // 
             // idWriterDataGridViewTextBoxColumn
             // 
             this.idWriterDataGridViewTextBoxColumn.DataPropertyName = "idWriter";
             this.idWriterDataGridViewTextBoxColumn.HeaderText = "idWriter";
+            this.idWriterDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idWriterDataGridViewTextBoxColumn.Name = "idWriterDataGridViewTextBoxColumn";
             this.idWriterDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idWriterDataGridViewTextBoxColumn.Width = 125;
             // 
             // idDirectorDataGridViewTextBoxColumn
             // 
             this.idDirectorDataGridViewTextBoxColumn.DataPropertyName = "idDirector";
             this.idDirectorDataGridViewTextBoxColumn.HeaderText = "idDirector";
+            this.idDirectorDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDirectorDataGridViewTextBoxColumn.Name = "idDirectorDataGridViewTextBoxColumn";
             this.idDirectorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDirectorDataGridViewTextBoxColumn.Width = 125;
             // 
             // idProducerDataGridViewTextBoxColumn
             // 
             this.idProducerDataGridViewTextBoxColumn.DataPropertyName = "idProducer";
             this.idProducerDataGridViewTextBoxColumn.HeaderText = "idProducer";
+            this.idProducerDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idProducerDataGridViewTextBoxColumn.Name = "idProducerDataGridViewTextBoxColumn";
             this.idProducerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idProducerDataGridViewTextBoxColumn.Width = 125;
             // 
             // avaliable
             // 
             this.avaliable.DataPropertyName = "avaliable";
             this.avaliable.HeaderText = "avaliable";
+            this.avaliable.MinimumWidth = 6;
             this.avaliable.Name = "avaliable";
             this.avaliable.ReadOnly = true;
             this.avaliable.Visible = false;
+            this.avaliable.Width = 125;
             // 
             // movieBindingSource
             // 
@@ -151,7 +164,7 @@
             this.btnAdd,
             this.btnEdit,
             this.btnDisable});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(4, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip1.Size = new System.Drawing.Size(372, 27);
@@ -197,9 +210,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.toolStripContainer1);
+            this.MaximizeBox = false;
             this.Name = "frmMovies";
-            this.Text = "frmMovies";
+            this.Text = "Peliculas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMovies_Load);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
