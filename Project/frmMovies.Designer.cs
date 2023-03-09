@@ -32,24 +32,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMovies));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvMovies = new System.Windows.Forms.DataGridView();
-            this.idMovieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idWriterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDirectorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProducerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avaliable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.movieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnRefresh = new System.Windows.Forms.ToolStripButton();
             this.btnAdd = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDisable = new System.Windows.Forms.ToolStripButton();
+            this.movieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idMovieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idWriterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDirectorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProducerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovies)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -82,7 +82,7 @@
             this.idWriterDataGridViewTextBoxColumn,
             this.idDirectorDataGridViewTextBoxColumn,
             this.idProducerDataGridViewTextBoxColumn,
-            this.avaliable});
+            this.available});
             this.dgvMovies.DataSource = this.movieBindingSource;
             this.dgvMovies.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMovies.Location = new System.Drawing.Point(0, 0);
@@ -93,6 +93,62 @@
             this.dgvMovies.Size = new System.Drawing.Size(800, 423);
             this.dgvMovies.TabIndex = 0;
             this.dgvMovies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovies_CellContentClick);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnRefresh,
+            this.btnAdd,
+            this.btnEdit,
+            this.btnDisable});
+            this.toolStrip1.Location = new System.Drawing.Point(4, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip1.Size = new System.Drawing.Size(411, 27);
+            this.toolStrip1.TabIndex = 0;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(99, 24);
+            this.btnRefresh.Text = "Actualizar";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(87, 24);
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(72, 24);
+            this.btnEdit.Text = "Editar";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDisable
+            // 
+            this.btnDisable.Image = ((System.Drawing.Image)(resources.GetObject("btnDisable.Image")));
+            this.btnDisable.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDisable.Name = "btnDisable";
+            this.btnDisable.Size = new System.Drawing.Size(111, 24);
+            this.btnDisable.Text = "Dar de Baja";
+            this.btnDisable.Click += new System.EventHandler(this.btnDisable_Click);
+            // 
+            // movieBindingSource
+            // 
+            this.movieBindingSource.DataSource = typeof(BOL.Movie);
             // 
             // idMovieDataGridViewTextBoxColumn
             // 
@@ -140,70 +196,15 @@
             this.idProducerDataGridViewTextBoxColumn.ReadOnly = true;
             this.idProducerDataGridViewTextBoxColumn.Width = 125;
             // 
-            // avaliable
+            // available
             // 
-            this.avaliable.DataPropertyName = "avaliable";
-            this.avaliable.HeaderText = "avaliable";
-            this.avaliable.MinimumWidth = 6;
-            this.avaliable.Name = "avaliable";
-            this.avaliable.ReadOnly = true;
-            this.avaliable.Visible = false;
-            this.avaliable.Width = 125;
-            // 
-            // movieBindingSource
-            // 
-            this.movieBindingSource.DataSource = typeof(BOL.Movie);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnRefresh,
-            this.btnAdd,
-            this.btnEdit,
-            this.btnDisable});
-            this.toolStrip1.Location = new System.Drawing.Point(4, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(372, 27);
-            this.toolStrip1.TabIndex = 0;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(99, 24);
-            this.btnRefresh.Text = "Actualizar";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 24);
-            this.btnAdd.Text = "Agregar";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(72, 24);
-            this.btnEdit.Text = "Editar";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnDisable
-            // 
-            this.btnDisable.Image = ((System.Drawing.Image)(resources.GetObject("btnDisable.Image")));
-            this.btnDisable.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDisable.Name = "btnDisable";
-            this.btnDisable.Size = new System.Drawing.Size(111, 24);
-            this.btnDisable.Text = "Dar de Baja";
+            this.available.DataPropertyName = "available";
+            this.available.HeaderText = "available";
+            this.available.MinimumWidth = 6;
+            this.available.Name = "available";
+            this.available.ReadOnly = true;
+            this.available.Visible = false;
+            this.available.Width = 125;
             // 
             // frmMovies
             // 
@@ -223,9 +224,9 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovies)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,6 +246,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idWriterDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDirectorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn avaliable;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn available;
     }
 }

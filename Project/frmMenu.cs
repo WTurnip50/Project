@@ -11,13 +11,7 @@ using System.Windows.Forms;
 namespace Project
 {
     public partial class frmMenu : Form {
-        private bool fma = false;
 
-        private bool fwa = false;
-
-        private bool fda = false;
-        
-        private bool fpa = false;
 
         public frmMenu()
         {
@@ -75,16 +69,9 @@ namespace Project
                 {
                     if (frmOpen.GetType() == typeof(frmMovies))
                     {
-                        //MessageBox.Show("Ya esta abierto", "Aviso",
-                        //    MessageBoxButtons.OK, MessageBoxIcon.Information);
                         frmOpen.Focus();
                         frmOpen.WindowState = FormWindowState.Maximized;
-                        fma = true;
                         break;
-                    }
-                    else
-                    {
-                        fma = false;
                     }
                 }
             }
@@ -105,9 +92,7 @@ namespace Project
                 foreach (Form frmOpen in Application.OpenForms)
                 {
                     if (frmOpen.GetType() == typeof(frmWriters))
-                    {
-                        //MessageBox.Show("Ya esta abierto", "Aviso",
-                        //    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    { 
                         frmOpen.Focus();
                         frmOpen.WindowState = FormWindowState.Maximized;
                         break;
@@ -165,7 +150,6 @@ namespace Project
                 frmProducers frm = new frmProducers();
                 frm.MdiParent = this;
                 frm.Show();
-                fpa = true;
             }
             
         }

@@ -34,18 +34,19 @@ namespace Project
         {
             frmAddMovie frm = new frmAddMovie();
             frm.ShowDialog();
+            CargarRegistros();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            var filaSeleccionada = dgvMovies.CurrentRow;
+            var filaSeleccionada = dgvMovies.CurrentRow.Cells[0];
 
             if (filaSeleccionada != null) //¿Existe una referencia?
             {
-                int id = Convert.ToInt32(filaSeleccionada.Cells[0].Value);
-                //MessageBox.Show("id: " + id);
+                int id = Convert.ToInt32(filaSeleccionada.Value);
                 frmAddMovie frm = new frmAddMovie(id);
                 frm.ShowDialog();
+                CargarRegistros();
             }
 
 
@@ -59,6 +60,33 @@ namespace Project
         private void CargarRegistros()
         {
             dgvMovies.DataSource = movieBLL.GetAll();
+        }
+
+        private void btnDisable_Click(object sender, EventArgs e)
+        {
+            var filaSeleccionada = dgvMovies.CurrentRow.Cells[0];
+
+            if (filaSeleccionada != null) //¿Existe una referencia?
+            {
+                if(MessageBox.Show("¿Desea dar de baja la pélicula?","-- Dar de baja --",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.No)
+                {
+                    int id = Convert.ToInt32(filaSeleccionada.Value);
+                    if (movieBLL.Disable(new BOL.Movie()
+                    {
+                        idMovie = id
+                    }))
+                    {
+                        MessageBox.Show("Pelicula dada de baja", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarRegistros();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Operación Cancelada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                
+            }
         }
     }
 }

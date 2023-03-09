@@ -20,7 +20,7 @@ namespace Project
         private DirectorBLL directorBLL = DirectorBLL.Instance();
 
         private int id = 0;
-        //private bool edit = false;
+        private bool edit = true;
         public frmAddMovie()
         {
             InitializeComponent();
@@ -38,23 +38,26 @@ namespace Project
             cbD.DataSource = directorBLL.GetAll();
 
             cbP.DataSource = producerBLL.GetAll();
+            edit = false;
             Movie movie = movieBLL.GetByID(new BOL.Movie()
             {
                 idMovie = id
             });
-            this.id = movie.idMovie;
-            txtTitle.Text = movie.title;
-            int idw = movie.idWriter - 1;
-            cbW.SelectedIndex = idw;
+            if(movie != null)
+            {
+                this.id = movie.idMovie;
+                this.txtTitle.Text = movie.title;
+                int idw = movie.idWriter - 1;
+                cbW.SelectedIndex = idw;
 
-            int idD = movie.idDirector - 1;
-            cbD.SelectedIndex = idD;
+                int idD = movie.idDirector - 1;
+                cbD.SelectedIndex = idD;
 
-            int idp = movie.idProducer - 1;
-            cbP.SelectedIndex = idp;
-                //cbP.SelectedIndex = movie.idProducer;
-                //cbD.SelectedIndex = movie.idDirector;
+                int idp = movie.idProducer - 1;
+                cbP.SelectedIndex = idp;
+                this.Text = "-- Editar Pelicula --";
             }
+        }
 
         private void frmAddMovie_Load(object sender, EventArgs e)
         {
@@ -67,22 +70,56 @@ namespace Project
             int cb2 = (int)cbD.SelectedValue;
             int cb3 = (int)cbP.SelectedValue;
 
-            if (!txtTitle.Text.Equals("")) {
-                if(movieBLL.Add(new BOL.Movie() {
-                    title = txtTitle.Text,
-                    idWriter = cb1,
-                    idDirector = cb2,
-                    idProducer = cb3
-                }))
+            if (edit!=false)
+            {
+                if (!txtTitle.Text.Equals(""))
                 {
-                    MessageBox.Show("Pelicula almacenada",
-                   Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (movieBLL.Add(new BOL.Movie()
+                    {
+                        title = txtTitle.Text,
+                        idWriter = cb1,
+                        idDirector = cb2,
+                        idProducer = cb3
+                    }))
+                    {
+                        MessageBox.Show("Pelicula almacenada",
+                       Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El campo Titulo no puede ser nulo",
+                    Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("El campo categoria no puede ser nulo", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (!txtTitle.Text.Equals(""))
+                {
+                    if(movieBLL.Edit(new BOL.Movie()
+                    {
+                        idMovie = this.id,
+                        title = txtTitle.Text,
+                        idWriter = cb1,
+                        idDirector = cb2,
+                        idProducer = cb3
+                    }))
+                    {
+                        MessageBox.Show("Datos Actualizados", "Aviso",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El campo Titulo no puede ser nulo",
+                        Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtTitle.Focus();
+                    }
+                }
+                
+                   
             }
+           
 
         }
     }
