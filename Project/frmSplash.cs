@@ -36,5 +36,10 @@ namespace Project
                 this.Dispose();
             }
         }
+
+        private void frmSplash_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

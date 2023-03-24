@@ -30,6 +30,23 @@ namespace Project
 
         }
 
+
+        private void frmMovies_Load(object sender, EventArgs e)
+        {
+            CargarRegistros();
+        }
+
+        private void CargarRegistros()
+        {
+            dgvMovies.DataSource = movieBLL.GetAll();
+        }
+
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            CargarRegistros();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddMovie frm = new frmAddMovie();
@@ -48,18 +65,6 @@ namespace Project
                 frm.ShowDialog();
                 CargarRegistros();
             }
-
-
-        }
-
-        private void frmMovies_Load(object sender, EventArgs e)
-        {
-            CargarRegistros();
-        }
-
-        private void CargarRegistros()
-        {
-            dgvMovies.DataSource = movieBLL.GetAll();
         }
 
         private void btnDisable_Click(object sender, EventArgs e)
@@ -68,7 +73,7 @@ namespace Project
 
             if (filaSeleccionada != null) //¿Existe una referencia?
             {
-                if(MessageBox.Show("¿Desea dar de baja la pélicula?","-- Dar de baja --",
+                if (MessageBox.Show("¿Desea dar de baja la pélicula?", "-- Dar de baja --",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.No)
                 {
                     int id = Convert.ToInt32(filaSeleccionada.Value);
@@ -85,7 +90,7 @@ namespace Project
                 {
                     MessageBox.Show("Operación Cancelada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                
+
             }
         }
     }

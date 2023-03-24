@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pbSplash = new System.Windows.Forms.ProgressBar();
             this.lblLoad = new System.Windows.Forms.Label();
-            this.tmsplash = new System.Windows.Forms.Timer(this.components);
+            this.tmsplash = new System.Windows.Forms.Timer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -40,9 +39,10 @@
             // 
             this.pbSplash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.pbSplash.ForeColor = System.Drawing.Color.HotPink;
-            this.pbSplash.Location = new System.Drawing.Point(207, 299);
+            this.pbSplash.Location = new System.Drawing.Point(276, 368);
+            this.pbSplash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbSplash.Name = "pbSplash";
-            this.pbSplash.Size = new System.Drawing.Size(242, 20);
+            this.pbSplash.Size = new System.Drawing.Size(323, 25);
             this.pbSplash.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.pbSplash.TabIndex = 1;
             // 
@@ -50,9 +50,10 @@
             // 
             this.lblLoad.AutoSize = true;
             this.lblLoad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoad.Location = new System.Drawing.Point(216, 275);
+            this.lblLoad.Location = new System.Drawing.Point(288, 338);
+            this.lblLoad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoad.Name = "lblLoad";
-            this.lblLoad.Size = new System.Drawing.Size(224, 21);
+            this.lblLoad.Size = new System.Drawing.Size(279, 28);
             this.lblLoad.TabIndex = 2;
             this.lblLoad.Text = "Cargando por favor espere...";
             // 
@@ -64,26 +65,29 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Project.Properties.Resources.Splash_Screen_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(103, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(137, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(438, 223);
+            this.pictureBox1.Size = new System.Drawing.Size(584, 274);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // frmSplash
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(637, 364);
+            this.ClientSize = new System.Drawing.Size(849, 448);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblLoad);
             this.Controls.Add(this.pbSplash);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmSplash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplashScreen";
+            this.Load += new System.EventHandler(this.frmSplash_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
