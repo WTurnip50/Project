@@ -1,0 +1,10 @@
+-- Cambios Realizados --
+El formulario Directores esta completo ✔
+- Valida campo vacio ✔
+- Valida cambios en el campo ✔
+- Pregunta si se desea hacer cambios (Al cerrar el formulario)✔
+- Pregunta si desea cerrar el formulario(Solo si no hubo cambios)✔
+- Guarda ✔
+- Edita ✔
+- Elimina registros ✔
+------------------------------------------------------------------

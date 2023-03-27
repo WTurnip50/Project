@@ -22,5 +22,19 @@ namespace PVL
         {
 
         }
+
+        private void btnMovies_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmMovies frm = new frmMovies();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnDirectors_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDirector frm = new frmDirector();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

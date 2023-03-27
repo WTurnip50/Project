@@ -37,24 +37,59 @@ namespace PVL
             rlupProducer.DataSource = producerBLL.GetAll();
         }
 
-        private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            CargarRegistros();
-            XtraMessageBox.Show("Registros Cargados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void Add()
         {
             frmAddMovie frm = new frmAddMovie();
             frm.ShowDialog();
         }
 
-        private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void Edit()
         {
             int row = (int)gvMovies.GetFocusedRowCellValue(colidMovie);
-            XtraMessageBox.Show("El valor es: " + row, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //XtraMessageBox.Show("El valor es: " + row, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             frmAddMovie frm = new frmAddMovie(row);
             frm.ShowDialog();
+        }
+
+        private void Dropdown()
+        {
+            int row = (int)gvMovies.GetFocusedRowCellValue(colidMovie);
+            if (row > 0)
+            {
+                if (XtraMessageBox.Show("Desea Eliminar la pelicula", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.No)
+                {
+                    if (movieBLL.Disable(new BOL.Movie() { idMovie = row }))
+                        XtraMessageBox.Show("Pelicula Eliminada");
+                }
+                else
+                {
+                    XtraMessageBox.Show("Operación Cancelada");
+                }
+                    
+            }
+               
+                
+        }
+
+        private void btnLoad_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            XtraMessageBox.Show("Registros Cargados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            CargarRegistros();
+        }
+
+        private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Add();
+        }
+
+        private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Edit();
+        }
+
+        private void btnDrop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Dropdown();
         }
     }
 }

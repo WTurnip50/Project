@@ -28,5 +28,38 @@ namespace BLL
         {
             return directorDal.getAll();
         }
+
+        public bool Add(Director director)
+        {
+            if (directorDal.newDirector(director) > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public Director getByID(Director director)
+        {
+            return directorDal.getByID(director);
+        }
+
+        public bool Edit(Director director)
+        {
+            if (directorDal.editDirector(director) > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public bool Disable(Director director)
+        {
+            if(directorDal.Disable(director) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -106,3 +106,5 @@ C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmMain.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmMenu.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.SplashScreen1.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.WaitForm1.resources
+C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmDirector.resources
+C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmAddDirector.resources

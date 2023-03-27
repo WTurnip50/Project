@@ -18,7 +18,7 @@ namespace PVL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMovies());
+            Application.Run(new frmMenu());
         }
     }
 }
