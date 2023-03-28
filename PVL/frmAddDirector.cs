@@ -17,6 +17,7 @@ namespace PVL
     {
         private DirectorBLL directorBLL = DirectorBLL.Instance();
         private bool editMode = false;
+        private bool editSave = false;
         private int id = 0;
         private string name = "";
 
@@ -32,6 +33,12 @@ namespace PVL
             Director director = directorBLL.getByID(new BOL.Director() { idDirector = this.id});
             txtDirector.Text = director.name.Trim();
             this.name = director.name.Trim();
+            this.editMode = true;
+        }
+
+        private void clean()
+        {
+            this.txtDirector.ResetText();
         }
 
         private bool isEdit()
@@ -52,7 +59,7 @@ namespace PVL
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -64,6 +71,7 @@ namespace PVL
                     if (directorBLL.Add(new BOL.Director() { name = txtDirector.Text.Trim() }))
                     {
                         XtraMessageBox.Show("Elemento almacenado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clean();
                     }
                 }
                 
@@ -75,6 +83,8 @@ namespace PVL
                     if (directorBLL.Edit(new BOL.Director() { idDirector = this.id, name = txtDirector.Text.Trim()}))
                     {
                         XtraMessageBox.Show("Elemento actualizado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Dispose();
+                        editSave = true;
                     }
                 }
             }
@@ -91,34 +101,37 @@ namespace PVL
 
         private void frmAddDirector_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (isDifferent())
-            {
-                if(XtraMessageBox.Show("Se han realizado cambios a la información" + "\n Desea Almacenarlos", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.No)
+            if (!editSave) {
+                if (isDifferent())
                 {
-                    if (!isEdit())
+                    if (XtraMessageBox.Show("Se han realizado cambios a la información" + "\n Desea Almacenarlos", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.No)
                     {
-                        if (directorBLL.Add(new BOL.Director() { name = txtDirector.Text.Trim() }))
+                        if (isEdit())
                         {
-                            XtraMessageBox.Show("Elemento almacenado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (directorBLL.Edit(new BOL.Director() { idDirector = this.id, name = txtDirector.Text.Trim() }))
+                            {
+                                XtraMessageBox.Show("Se han guardado los cambios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            this.editMode = false;
+                        }
+                        else
+                        {
+                            if (directorBLL.Add(new BOL.Director() { name = this.txtDirector.Text.Trim() }))
+                            {
+                                XtraMessageBox.Show("Se han guardado los cambios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                     }
-                    else
-                    {
-                        if (directorBLL.Edit(new BOL.Director() { idDirector = this.id, name = txtDirector.Text.Trim() }))
-                        {
-                            XtraMessageBox.Show("Elemento actualizado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                   
                 }
-            }
-            else
-            {
-                if(XtraMessageBox.Show("Desea Cerrar el formulario", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                else
                 {
-                    e.Cancel = true;
+                    if (XtraMessageBox.Show("Desea Cerrar el formulario", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                    {
+                        e.Cancel = true;
+                    }
                 }
             }
+            
         }
     }
 }

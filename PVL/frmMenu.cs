@@ -36,5 +36,33 @@ namespace PVL
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (XtraMessageBox.Show("¿Deséa finalizar la sesión?", Application.ProductName,
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                //Busca el formulario de Login para poder habilitarlo de nuevo.
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(frmLogin))
+                    {
+                        XtraMessageBox.Show("Sesión Finalizada.", "Aviso",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        frm.Show();
+                        break;
+                    }
+                }
+            }
+        }
     }
 }

@@ -43,7 +43,6 @@ C:\Users\Israel\Documents\GitHub\Project\PVL\bin\Debug\es\DevExpress.Pdf.v20.1.C
 C:\Users\Israel\Documents\GitHub\Project\PVL\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
 C:\Users\Israel\Documents\GitHub\Project\PVL\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.csproj.AssemblyReference.cache
-C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.Form1.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.Properties.Resources.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.csproj.GenerateResource.cache
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.csproj.CoreCompileInputs.cache
@@ -108,3 +107,4 @@ C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.SplashScreen1.resourc
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.WaitForm1.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmDirector.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmAddDirector.resources
+C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmLogin.resources

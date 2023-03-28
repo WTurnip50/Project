@@ -97,6 +97,7 @@ namespace PVL
             this.btnLogout.Id = 1;
             this.btnLogout.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLogout.ImageOptions.SvgImage")));
             this.btnLogout.Name = "btnLogout";
+            this.btnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogout_ItemClick);
             // 
             // barSubItem1
             // 
@@ -166,6 +167,7 @@ namespace PVL
             this.IsMdiContainer = true;
             this.Name = "frmMenu";
             this.Text = "Menu PeliSoft";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
             this.Load += new System.EventHandler(this.frmMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mdiMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
