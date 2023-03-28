@@ -8,3 +8,10 @@ El formulario Directores esta completo ✔
 - Edita ✔
 - Elimina registros ✔
 ------------------------------------------------------------------
+Formulario Login
+Funcional, falta campos y diseño validado
+Menu
+Cerrar sesión funcional
+Directores
+Fallo de actualizar Arreglado
+------------------------------------------------------------------
