@@ -64,5 +64,12 @@ namespace PVL
                 }
             }
         }
+
+        private void btnWriters_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmWriters frmWriters = new frmWriters();
+            frmWriters.MdiParent = this;
+            frmWriters.Show();
+        }
     }
 }

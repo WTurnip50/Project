@@ -31,15 +31,34 @@ namespace BLL
             else
                 return false;
         }
+        public bool Edit(Writer writer)
+        {
+            if (writerDal.Edit(writer) > 0)
+                return true;
+            else
+                return false;
+        }
 
         public Writers GetAll()
         {
             return writerDal.getAll();
         }
 
-        //public Writer GetByID(Writer writer)
-        //{
-        //    return writerDal.GetByID(writer);
-        //}
+        public Writer GetByID(Writer writer)
+        {
+            return writerDal.GetByID(writer);
+        }
+
+        public bool Disable(Writer writer)
+        {
+            if (writerDal.Disable(writer) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

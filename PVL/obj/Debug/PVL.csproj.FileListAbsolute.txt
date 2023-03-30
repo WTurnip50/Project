@@ -49,7 +49,6 @@ C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.csproj.CoreCompileInp
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.csproj.CopyComplete
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.exe
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.pdb
-C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.SSMovie.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.exe.licenses
 C:\Users\Israel\Documents\GitHub\Project\PVL\bin\Debug\BLL.dll
 C:\Users\Israel\Documents\GitHub\Project\PVL\bin\Debug\BOL.dll
@@ -103,8 +102,8 @@ C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmMovies.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmAddMovie.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmMain.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmMenu.resources
-C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.SplashScreen1.resources
-C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.WaitForm1.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmDirector.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmAddDirector.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmLogin.resources
+C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmWriters.resources
+C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmAddWriter.resources

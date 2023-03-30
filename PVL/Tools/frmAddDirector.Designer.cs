@@ -39,18 +39,18 @@ namespace PVL
             // 
             // txtDirector
             // 
-            this.txtDirector.Location = new System.Drawing.Point(95, 59);
-            this.txtDirector.Margin = new System.Windows.Forms.Padding(5);
+            this.txtDirector.Location = new System.Drawing.Point(97, 43);
+            this.txtDirector.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.txtDirector.Name = "txtDirector";
-            this.txtDirector.Size = new System.Drawing.Size(337, 24);
+            this.txtDirector.Size = new System.Drawing.Size(347, 24);
             this.txtDirector.TabIndex = 2;
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(14, 53);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(5);
+            this.labelControl1.Location = new System.Drawing.Point(22, 39);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(71, 28);
             this.labelControl1.TabIndex = 3;
@@ -62,10 +62,10 @@ namespace PVL
             this.btnCancel.Appearance.Options.UseFont = true;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
-            this.btnCancel.Location = new System.Drawing.Point(95, 166);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Location = new System.Drawing.Point(97, 115);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(116, 38);
+            this.btnCancel.Size = new System.Drawing.Size(112, 45);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -75,10 +75,10 @@ namespace PVL
             this.btnSave.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(315, 166);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(334, 115);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(117, 38);
+            this.btnSave.Size = new System.Drawing.Size(110, 45);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Guardar";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -89,14 +89,18 @@ namespace PVL
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(461, 259);
+            this.ClientSize = new System.Drawing.Size(489, 215);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtDirector);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAddDirector";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Añadir director";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAddDirector_FormClosing);
             this.Load += new System.EventHandler(this.frmAddDirector_Load);

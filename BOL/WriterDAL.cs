@@ -32,7 +32,7 @@ namespace BOL
             {
                 SqlParameter[] parameters = new SqlParameter[1];
                 parameters[0] = new SqlParameter("@name", writer.name);
-                string query = "Writers_newWriter";
+                string query = "Writer_Add";
                 return dataAccess.Execute(query, parameters);
             }
             catch (Exception ex)
@@ -67,15 +67,63 @@ namespace BOL
                 throw new ApplicationException("Error :" + ex.Message);
             }
         }
+        public int Edit(Writer writer)
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[2];
+                parameters[0] = new SqlParameter("@name", writer.name);
+                parameters[1] = new SqlParameter("@idWriter", writer.idWriter);
+                string query = "Writer_Edit";
+                return dataAccess.Execute(query, parameters);
+            }
+            catch (Exception e)
+            {
 
-        //public Writer GetByID(Writer writer)
-        //{
-        //    try
-        //    {
-        //        SqlParameter[] parameters = new SqlParameter[1];
-        //        parameters[0] = new SqlParameter("@idWriter", writer.idWriter);
-        //    }
-        //}
+                throw new ApplicationException("Error " + e.Message);
+            }
+        }
+
+        public Writer GetByID(Writer writer)
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[1];
+                parameters[0] = new SqlParameter("@idWriter", writer.idWriter);
+                string query = "Writer_getByID";
+                DataTable resultado = dataAccess.Query(query, parameters);
+                if (resultado.Rows.Count > 0)
+                {
+                    writer = new Writer()
+                    {
+                        idWriter = (int)resultado.Rows[0]["idWriter"],
+                        name = (string)resultado.Rows[0]["name"],
+                        activo = (bool)resultado.Rows[0]["activo"]
+                    };
+                }
+                return writer;
+            }
+            catch (Exception e)
+            {
+
+                throw new ApplicationException("Error : " + e.Message);
+            }
+        }
+
+        public int Disable(Writer writer)
+        {
+            try
+            {
+                SqlParameter[] parameters = new SqlParameter[1];
+                parameters[0] = new SqlParameter("@idwriter", writer.idWriter);
+                string query = "Writer_Drop";
+                return dataAccess.Execute(query, parameters);
+            }
+            catch (Exception e)
+            {
+                throw new ApplicationException("Error: " + e.Message);
+            }
+        }
 
     }
 }

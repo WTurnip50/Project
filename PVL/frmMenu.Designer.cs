@@ -38,6 +38,7 @@ namespace PVL
             this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btnMovies = new DevExpress.XtraBars.BarButtonItem();
+            this.btnWriters = new DevExpress.XtraBars.BarButtonItem();
             this.btnDirectors = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -65,8 +66,9 @@ namespace PVL
             this.btnLogout,
             this.barSubItem1,
             this.btnMovies,
-            this.btnDirectors});
-            this.barManager1.MaxItemId = 5;
+            this.btnDirectors,
+            this.btnWriters});
+            this.barManager1.MaxItemId = 6;
             // 
             // bar1
             // 
@@ -105,6 +107,7 @@ namespace PVL
             this.barSubItem1.Id = 2;
             this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnMovies),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnWriters),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDirectors)});
             this.barSubItem1.Name = "barSubItem1";
             // 
@@ -114,6 +117,13 @@ namespace PVL
             this.btnMovies.Id = 3;
             this.btnMovies.Name = "btnMovies";
             this.btnMovies.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMovies_ItemClick);
+            // 
+            // btnWriters
+            // 
+            this.btnWriters.Caption = "Writers";
+            this.btnWriters.Id = 5;
+            this.btnWriters.Name = "btnWriters";
+            this.btnWriters.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnWriters_ItemClick);
             // 
             // btnDirectors
             // 
@@ -166,6 +176,7 @@ namespace PVL
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("frmMenu.IconOptions.SvgImage")));
             this.IsMdiContainer = true;
             this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu PeliSoft";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
             this.Load += new System.EventHandler(this.frmMenu_Load);
@@ -190,5 +201,6 @@ namespace PVL
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem btnDirectors;
+        private DevExpress.XtraBars.BarButtonItem btnWriters;
     }
 }
