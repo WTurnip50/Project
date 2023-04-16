@@ -30,9 +30,10 @@ namespace BOL
         {
             try
             {
-                SqlParameter[] parameters = new SqlParameter[2];
+                SqlParameter[] parameters = new SqlParameter[3];
                 parameters[0] = new SqlParameter("@username", user.username);
                 parameters[1] = new SqlParameter("@password", user.password);
+                parameters[2] = new SqlParameter("@su", user.SU);
                 string query = "Users_newUser";
                 return dataAccess.Execute(query, parameters);
             }
@@ -90,8 +91,8 @@ namespace BOL
             try
             {
                 SqlParameter[] parameter = new SqlParameter[1];
-                parameter[0] = new SqlParameter("@username", user.username);
-                string query = "Users_CheckAvailable";
+                parameter[0] = new SqlParameter("@nombre", user.username);
+                string query = "FindUser";
                 DataTable result = dataAccess.Query(query, parameter);
                 if (result.Rows.Count > 0)
                 {
@@ -99,12 +100,12 @@ namespace BOL
                     {
                         idUser = (int)result.Rows[0]["idUser"],
                         username = (string)result.Rows[0]["username"],
-                        password = "UserPass",
                         activo = (bool)result.Rows[0]["activo"],
-                        SU = (bool)result.Rows[0]["SU"]
                     };
+                    return user;
                 }
-                return user;
+                return null;
+                
             }
             catch (Exception ex)
             {

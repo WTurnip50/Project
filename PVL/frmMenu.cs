@@ -13,9 +13,15 @@ namespace PVL
 {
     public partial class frmMenu : DevExpress.XtraEditors.XtraForm
     {
+        private bool SU = false;
         public frmMenu()
         {
             InitializeComponent();
+        }
+        public frmMenu(bool SU)
+        {
+            InitializeComponent();
+            this.SU = SU;
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
@@ -70,6 +76,21 @@ namespace PVL
             frmWriters frmWriters = new frmWriters();
             frmWriters.MdiParent = this;
             frmWriters.Show();
+        }
+
+        private void btnNewUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.SU)
+            {
+                XtraMessageBox.Show("No cuenta con permisos avanzados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                frmNUser frmN = new frmNUser();
+                frmN.MdiParent = this;
+                frmN.Show();
+            }
+            
         }
     }
 }

@@ -56,7 +56,7 @@ namespace PVL
         {
             this.txtWriter.Text = "";
             this.txtWriter.Focus();
-        }
+        } 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!isEdit())

@@ -56,6 +56,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmGrant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrant.Designer.cs">
+      <DependentUpon>frmGrant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewPass.Designer.cs">
+      <DependentUpon>frmNewPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNUser.Designer.cs">
+      <DependentUpon>frmNUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\frmAddDirector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +130,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmNewPass.resx">
+      <DependentUpon>frmNewPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNUser.resx">
+      <DependentUpon>frmNUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\frmAddDirector.resx">
       <DependentUpon>frmAddDirector.cs</DependentUpon>
     </EmbeddedResource>

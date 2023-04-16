@@ -1,4 +1,5 @@
 ﻿using BLL;
+using BOL;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -27,11 +28,15 @@ namespace PVL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(userBLL.Login(new BOL.User() { username = txtUser.Text.Trim(),password = txtPass.Text.Trim() }) != null)
+            User user = userBLL.Login(new BOL.User() { username = txtUser.Text.Trim(), password = txtPass.Text.Trim() });
+            if(user!= null)
             {
                 XtraMessageBox.Show("Bienvenido: " + txtUser.Text, "Inicio de sesión", MessageBoxButtons.OK);
+                this.txtPass.Text = "";
+                this.txtUser.Text = "";
+                this.txtUser.Focus();
                 this.Hide();
-                frmMenu frm = new frmMenu();
+                frmMenu frm = new frmMenu(user.SU);
                 frm.Show();
             }
             else

@@ -63,7 +63,7 @@ namespace PVL
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Add();
-        }
+        } 
 
         private void frmDirector_Load(object sender, EventArgs e)
         {

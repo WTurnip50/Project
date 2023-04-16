@@ -37,7 +37,10 @@ namespace BLL
         {
             return userDAL.getIdByUser(user);
         }
-
+        public User checkAvaliable(User user)
+        {
+            return userDAL.checkAvailable(user);
+        }
         public User Login(User user)
         {
             return userDAL.Login(user);
