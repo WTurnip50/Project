@@ -40,12 +40,13 @@ namespace PVL
             this.btnMovies = new DevExpress.XtraBars.BarButtonItem();
             this.btnWriters = new DevExpress.XtraBars.BarButtonItem();
             this.btnDirectors = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewPassword = new DevExpress.XtraBars.BarSubItem();
+            this.btnNewUser = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewPass = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.btnNewUser = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.mdiMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
@@ -70,9 +71,10 @@ namespace PVL
             this.btnMovies,
             this.btnDirectors,
             this.btnWriters,
-            this.barSubItem2,
-            this.btnNewUser});
-            this.barManager1.MaxItemId = 8;
+            this.btnNewPassword,
+            this.btnNewUser,
+            this.btnNewPass});
+            this.barManager1.MaxItemId = 9;
             // 
             // bar1
             // 
@@ -83,7 +85,7 @@ namespace PVL
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnFile, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnNewPassword)});
             this.bar1.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.All;
             this.bar1.OptionsBar.DrawBorder = false;
             this.bar1.OptionsBar.DrawDragBorder = false;
@@ -137,6 +139,29 @@ namespace PVL
             this.btnDirectors.Name = "btnDirectors";
             this.btnDirectors.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDirectors_ItemClick);
             // 
+            // btnNewPassword
+            // 
+            this.btnNewPassword.Caption = "Herramientas";
+            this.btnNewPassword.Id = 6;
+            this.btnNewPassword.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnNewUser),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnNewPass)});
+            this.btnNewPassword.Name = "btnNewPassword";
+            // 
+            // btnNewUser
+            // 
+            this.btnNewUser.Caption = "Nuevo Usuario";
+            this.btnNewUser.Id = 7;
+            this.btnNewUser.Name = "btnNewUser";
+            this.btnNewUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewUser_ItemClick);
+            // 
+            // btnNewPass
+            // 
+            this.btnNewPass.Caption = "Cambiar contraseña";
+            this.btnNewPass.Id = 8;
+            this.btnNewPass.Name = "btnNewPass";
+            this.btnNewPass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewPass_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -144,7 +169,7 @@ namespace PVL
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(769, 27);
+            this.barDockControlTop.Size = new System.Drawing.Size(769, 28);
             // 
             // barDockControlBottom
             // 
@@ -159,34 +184,19 @@ namespace PVL
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 417);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 416);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(769, 27);
+            this.barDockControlRight.Location = new System.Drawing.Point(769, 28);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 417);
-            // 
-            // barSubItem2
-            // 
-            this.barSubItem2.Caption = "Herramientas";
-            this.barSubItem2.Id = 6;
-            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnNewUser)});
-            this.barSubItem2.Name = "barSubItem2";
-            // 
-            // btnNewUser
-            // 
-            this.btnNewUser.Caption = "Nuevo Usuario";
-            this.btnNewUser.Id = 7;
-            this.btnNewUser.Name = "btnNewUser";
-            this.btnNewUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewUser_ItemClick);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 416);
             // 
             // frmMenu
             // 
@@ -227,7 +237,8 @@ namespace PVL
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem btnDirectors;
         private DevExpress.XtraBars.BarButtonItem btnWriters;
-        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarSubItem btnNewPassword;
         private DevExpress.XtraBars.BarButtonItem btnNewUser;
+        private DevExpress.XtraBars.BarButtonItem btnNewPass;
     }
 }

@@ -50,7 +50,7 @@ namespace PVL
             this.txtName.Location = new System.Drawing.Point(81, 54);
             this.txtName.Name = "txtName";
             this.txtName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtName.Size = new System.Drawing.Size(205, 20);
+            this.txtName.Size = new System.Drawing.Size(198, 20);
             this.txtName.TabIndex = 0;
             // 
             // txtPass
@@ -58,7 +58,7 @@ namespace PVL
             this.txtPass.Location = new System.Drawing.Point(81, 118);
             this.txtPass.Name = "txtPass";
             this.txtPass.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPass.Size = new System.Drawing.Size(205, 20);
+            this.txtPass.Size = new System.Drawing.Size(198, 20);
             this.txtPass.TabIndex = 1;
             // 
             // labelControl1
@@ -82,12 +82,12 @@ namespace PVL
             this.cbSU.Location = new System.Drawing.Point(81, 168);
             this.cbSU.Name = "cbSU";
             this.cbSU.Properties.Caption = "Permisos avanzados";
-            this.cbSU.Size = new System.Drawing.Size(120, 19);
+            this.cbSU.Size = new System.Drawing.Size(128, 19);
             this.cbSU.TabIndex = 4;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(211, 219);
+            this.btnSave.Location = new System.Drawing.Point(204, 219);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 5;
@@ -96,6 +96,7 @@ namespace PVL
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(81, 219);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -120,12 +121,15 @@ namespace PVL
             // 
             // frmNUser
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(284, 252);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmNUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nuevo Usuario";
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).EndInit();

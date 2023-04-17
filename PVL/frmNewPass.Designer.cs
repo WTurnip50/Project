@@ -32,16 +32,16 @@ namespace PVL
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewPass));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
+            this.txtPass = new DevExpress.XtraEditors.TextEdit();
+            this.txtPass2 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPass2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.SuspendLayout();
@@ -62,26 +62,31 @@ namespace PVL
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Contraseña nueva";
             // 
-            // textEdit1
+            // txtName
             // 
-            this.textEdit1.Location = new System.Drawing.Point(138, 43);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
-            this.textEdit1.TabIndex = 2;
+            this.txtName.Location = new System.Drawing.Point(68, 43);
+            this.txtName.Name = "txtName";
+            this.txtName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtName.Size = new System.Drawing.Size(170, 20);
+            this.txtName.TabIndex = 0;
             // 
-            // textEdit2
+            // txtPass
             // 
-            this.textEdit2.Location = new System.Drawing.Point(138, 95);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(100, 20);
-            this.textEdit2.TabIndex = 3;
+            this.txtPass.Location = new System.Drawing.Point(138, 95);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPass.Properties.UseSystemPasswordChar = true;
+            this.txtPass.Size = new System.Drawing.Size(100, 20);
+            this.txtPass.TabIndex = 1;
             // 
-            // textEdit3
+            // txtPass2
             // 
-            this.textEdit3.Location = new System.Drawing.Point(138, 151);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(100, 20);
-            this.textEdit3.TabIndex = 4;
+            this.txtPass2.Location = new System.Drawing.Point(138, 151);
+            this.txtPass2.Name = "txtPass2";
+            this.txtPass2.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPass2.Properties.UseSystemPasswordChar = true;
+            this.txtPass2.Size = new System.Drawing.Size(100, 20);
+            this.txtPass2.TabIndex = 2;
             // 
             // labelControl3
             // 
@@ -96,11 +101,11 @@ namespace PVL
             this.groupControl1.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
             this.groupControl1.Controls.Add(this.btnCancel);
             this.groupControl1.Controls.Add(this.btnSave);
-            this.groupControl1.Controls.Add(this.textEdit1);
+            this.groupControl1.Controls.Add(this.txtName);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.textEdit3);
-            this.groupControl1.Controls.Add(this.textEdit2);
+            this.groupControl1.Controls.Add(this.txtPass2);
+            this.groupControl1.Controls.Add(this.txtPass);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
@@ -109,24 +114,27 @@ namespace PVL
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Cambio de contraseña";
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(150, 225);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(88, 23);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Guardar cambio";
-            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(21, 225);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancelar";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(150, 225);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(88, 23);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Guardar cambio";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmNewPass
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(256, 260);
@@ -135,10 +143,12 @@ namespace PVL
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmNewPass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nueva contraseña";
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.frmNewPass_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPass2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -150,9 +160,9 @@ namespace PVL
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit txtName;
+        private DevExpress.XtraEditors.TextEdit txtPass;
+        private DevExpress.XtraEditors.TextEdit txtPass2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btnCancel;

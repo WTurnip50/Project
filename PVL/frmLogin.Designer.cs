@@ -82,7 +82,7 @@ namespace PVL
             this.txtPass.Properties.Appearance.Options.UseFont = true;
             this.txtPass.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.txtPass.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPass.Properties.PasswordChar = '*';
+            this.txtPass.Properties.UseSystemPasswordChar = true;
             this.txtPass.Size = new System.Drawing.Size(227, 30);
             this.txtPass.TabIndex = 1;
             // 
@@ -96,7 +96,6 @@ namespace PVL
             this.labelControl1.Size = new System.Drawing.Size(54, 21);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Usuario";
-            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // labelControl2
             // 
@@ -108,7 +107,6 @@ namespace PVL
             this.labelControl2.Size = new System.Drawing.Size(79, 21);
             this.labelControl2.TabIndex = 4;
             this.labelControl2.Text = "Contraseña";
-            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             // 
             // btnCancel
             // 
@@ -126,6 +124,7 @@ namespace PVL
             this.btnCancel.Size = new System.Drawing.Size(108, 31);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancelar";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // groupControl1
             // 
@@ -146,7 +145,7 @@ namespace PVL
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(346, 392);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "  Bienvenido";
+            this.groupControl1.Text = "  Bienvenido Ingrese Sus Credenciales";
             // 
             // frmLogin
             // 

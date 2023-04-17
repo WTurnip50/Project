@@ -28,7 +28,16 @@ namespace PVL
         {
 
         }
-
+        private void Message(int code) {
+            switch (code)
+            {
+                case 1:
+                    XtraMessageBox.Show("No cuenta con permisos avanzados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                default:
+                    break;
+            }
+        }
         private void btnMovies_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmMovies frm = new frmMovies();
@@ -82,13 +91,27 @@ namespace PVL
         {
             if (!this.SU)
             {
-                XtraMessageBox.Show("No cuenta con permisos avanzados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Message(1);
             }
             else
             {
                 frmNUser frmN = new frmNUser();
-                frmN.MdiParent = this;
-                frmN.Show();
+                //frmN.MdiParent = this;
+                frmN.ShowDialog();
+            }
+            
+        }
+
+        private void btnNewPass_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.SU)
+            {
+                Message(1);
+            }
+            else
+            {
+                frmNewPass frm = new frmNewPass();
+                frm.ShowDialog();
             }
             
         }

@@ -45,14 +45,9 @@ namespace PVL
             }
         }
 
-        private void labelControl1_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void labelControl2_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }
