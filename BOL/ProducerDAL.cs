@@ -74,8 +74,9 @@ namespace BOL
         {
             try
             {
-                SqlParameter[] parameters = new SqlParameter[1];
-                parameters[0] = new SqlParameter("@name", producer.name);
+                SqlParameter[] parameters = new SqlParameter[2];
+                parameters[0] = new SqlParameter("@id", producer.idProducer);
+                parameters[1] = new SqlParameter("@name", producer.name);
                 string query = "Producers_EditProducer";
                 return dataAccess.Execute(query, parameters);
             }

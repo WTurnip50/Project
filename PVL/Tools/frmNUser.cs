@@ -89,5 +89,10 @@ namespace PVL
             }
             
         }
+
+        private void frmNUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

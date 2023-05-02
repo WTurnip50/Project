@@ -29,6 +29,7 @@ namespace PVL
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNUser));
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.txtPass = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -105,6 +106,7 @@ namespace PVL
             // 
             // groupControl1
             // 
+            this.groupControl1.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
             this.groupControl1.Controls.Add(this.txtName);
             this.groupControl1.Controls.Add(this.cbSU);
             this.groupControl1.Controls.Add(this.btnSave);
@@ -131,6 +133,7 @@ namespace PVL
             this.Name = "frmNUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nuevo Usuario";
+            this.Load += new System.EventHandler(this.frmNUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSU.Properties)).EndInit();

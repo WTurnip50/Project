@@ -64,10 +64,10 @@ namespace PVL
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(68, 43);
+            this.txtName.Location = new System.Drawing.Point(74, 43);
             this.txtName.Name = "txtName";
             this.txtName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtName.Size = new System.Drawing.Size(170, 20);
+            this.txtName.Size = new System.Drawing.Size(198, 20);
             this.txtName.TabIndex = 0;
             // 
             // txtPass
@@ -76,7 +76,7 @@ namespace PVL
             this.txtPass.Name = "txtPass";
             this.txtPass.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPass.Properties.UseSystemPasswordChar = true;
-            this.txtPass.Size = new System.Drawing.Size(100, 20);
+            this.txtPass.Size = new System.Drawing.Size(134, 20);
             this.txtPass.TabIndex = 1;
             // 
             // txtPass2
@@ -85,7 +85,7 @@ namespace PVL
             this.txtPass2.Name = "txtPass2";
             this.txtPass2.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPass2.Properties.UseSystemPasswordChar = true;
-            this.txtPass2.Size = new System.Drawing.Size(100, 20);
+            this.txtPass2.Size = new System.Drawing.Size(134, 20);
             this.txtPass2.TabIndex = 2;
             // 
             // labelControl3
@@ -110,13 +110,13 @@ namespace PVL
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(256, 260);
+            this.groupControl1.Size = new System.Drawing.Size(284, 252);
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Cambio de contraseña";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(21, 225);
+            this.btnCancel.Location = new System.Drawing.Point(21, 217);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 4;
@@ -125,7 +125,7 @@ namespace PVL
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(150, 225);
+            this.btnSave.Location = new System.Drawing.Point(184, 217);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(88, 23);
             this.btnSave.TabIndex = 3;
@@ -137,7 +137,7 @@ namespace PVL
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 260);
+            this.ClientSize = new System.Drawing.Size(284, 252);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;

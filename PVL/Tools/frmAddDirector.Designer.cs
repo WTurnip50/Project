@@ -42,14 +42,16 @@ namespace PVL
             this.txtDirector.Location = new System.Drawing.Point(83, 33);
             this.txtDirector.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtDirector.Name = "txtDirector";
-            this.txtDirector.Size = new System.Drawing.Size(297, 20);
+            this.txtDirector.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtDirector.Properties.Appearance.Options.UseFont = true;
+            this.txtDirector.Size = new System.Drawing.Size(297, 28);
             this.txtDirector.TabIndex = 2;
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(19, 30);
+            this.labelControl1.Location = new System.Drawing.Point(16, 36);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(56, 21);
@@ -63,7 +65,7 @@ namespace PVL
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
             this.btnCancel.Location = new System.Drawing.Point(83, 88);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(96, 34);
             this.btnCancel.TabIndex = 4;
@@ -76,7 +78,7 @@ namespace PVL
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.Location = new System.Drawing.Point(286, 88);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 34);
             this.btnSave.TabIndex = 5;

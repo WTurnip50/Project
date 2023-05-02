@@ -32,7 +32,7 @@ namespace PVL
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.mdiMain = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.mnMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnFile = new DevExpress.XtraBars.BarSubItem();
             this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
@@ -40,6 +40,7 @@ namespace PVL
             this.btnMovies = new DevExpress.XtraBars.BarButtonItem();
             this.btnWriters = new DevExpress.XtraBars.BarButtonItem();
             this.btnDirectors = new DevExpress.XtraBars.BarButtonItem();
+            this.btnProducers = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewPassword = new DevExpress.XtraBars.BarSubItem();
             this.btnNewUser = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewPass = new DevExpress.XtraBars.BarButtonItem();
@@ -47,24 +48,27 @@ namespace PVL
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             ((System.ComponentModel.ISupportInitialize)(this.mdiMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mnMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // mdiMain
             // 
             this.mdiMain.MdiParent = this;
             // 
-            // barManager1
+            // mnMain
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.mnMain.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.bar1});
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.mnMain.DockControls.Add(this.barDockControlTop);
+            this.mnMain.DockControls.Add(this.barDockControlBottom);
+            this.mnMain.DockControls.Add(this.barDockControlLeft);
+            this.mnMain.DockControls.Add(this.barDockControlRight);
+            this.mnMain.Form = this;
+            this.mnMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btnFile,
             this.btnLogout,
             this.barSubItem1,
@@ -73,8 +77,9 @@ namespace PVL
             this.btnWriters,
             this.btnNewPassword,
             this.btnNewUser,
-            this.btnNewPass});
-            this.barManager1.MaxItemId = 9;
+            this.btnNewPass,
+            this.btnProducers});
+            this.mnMain.MaxItemId = 10;
             // 
             // bar1
             // 
@@ -93,7 +98,7 @@ namespace PVL
             // 
             // btnFile
             // 
-            this.btnFile.Caption = "File";
+            this.btnFile.Caption = "Archivo";
             this.btnFile.Id = 0;
             this.btnFile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnFile.ImageOptions.SvgImage")));
             this.btnFile.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
@@ -102,7 +107,7 @@ namespace PVL
             // 
             // btnLogout
             // 
-            this.btnLogout.Caption = "Logout";
+            this.btnLogout.Caption = "Cerrar sesión";
             this.btnLogout.Id = 1;
             this.btnLogout.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLogout.ImageOptions.SvgImage")));
             this.btnLogout.Name = "btnLogout";
@@ -115,29 +120,37 @@ namespace PVL
             this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnMovies),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnWriters),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnDirectors)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDirectors),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnProducers)});
             this.barSubItem1.Name = "barSubItem1";
             // 
             // btnMovies
             // 
-            this.btnMovies.Caption = "Movies";
+            this.btnMovies.Caption = "Películas";
             this.btnMovies.Id = 3;
             this.btnMovies.Name = "btnMovies";
             this.btnMovies.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMovies_ItemClick);
             // 
             // btnWriters
             // 
-            this.btnWriters.Caption = "Writers";
+            this.btnWriters.Caption = "Escritores";
             this.btnWriters.Id = 5;
             this.btnWriters.Name = "btnWriters";
             this.btnWriters.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnWriters_ItemClick);
             // 
             // btnDirectors
             // 
-            this.btnDirectors.Caption = "Directors";
+            this.btnDirectors.Caption = "Directores";
             this.btnDirectors.Id = 4;
             this.btnDirectors.Name = "btnDirectors";
             this.btnDirectors.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDirectors_ItemClick);
+            // 
+            // btnProducers
+            // 
+            this.btnProducers.Caption = "Productoras";
+            this.btnProducers.Id = 9;
+            this.btnProducers.Name = "btnProducers";
+            this.btnProducers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProducers_ItemClick);
             // 
             // btnNewPassword
             // 
@@ -167,7 +180,7 @@ namespace PVL
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Manager = this.mnMain;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControlTop.Size = new System.Drawing.Size(769, 28);
             // 
@@ -176,7 +189,7 @@ namespace PVL
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 444);
-            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Manager = this.mnMain;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControlBottom.Size = new System.Drawing.Size(769, 0);
             // 
@@ -185,7 +198,7 @@ namespace PVL
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
-            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Manager = this.mnMain;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 416);
             // 
@@ -194,15 +207,29 @@ namespace PVL
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(769, 28);
-            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Manager = this.mnMain;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 416);
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "ribbonPage2";
+            // 
+            // fluentDesignFormControl1
+            // 
+            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 28);
+            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(769, 0);
+            this.fluentDesignFormControl1.TabIndex = 9;
+            this.fluentDesignFormControl1.TabStop = false;
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 444);
+            this.Controls.Add(this.fluentDesignFormControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -216,7 +243,8 @@ namespace PVL
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
             this.Load += new System.EventHandler(this.frmMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mdiMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mnMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,7 +254,7 @@ namespace PVL
 
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager mdiMain;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarManager mnMain;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarSubItem btnFile;
         private DevExpress.XtraBars.BarButtonItem btnLogout;
@@ -240,5 +268,8 @@ namespace PVL
         private DevExpress.XtraBars.BarSubItem btnNewPassword;
         private DevExpress.XtraBars.BarButtonItem btnNewUser;
         private DevExpress.XtraBars.BarButtonItem btnNewPass;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
+        private DevExpress.XtraBars.BarButtonItem btnProducers;
     }
 }

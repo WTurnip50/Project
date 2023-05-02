@@ -109,3 +109,6 @@ C:\Users\Israel\Documents\GitHub\Project\PVL\bin\Debug\DevExpress.XtraLayout.v20
 C:\Users\Israel\Documents\GitHub\Project\PVL\bin\Debug\DevExpress.XtraPrinting.v20.1.dll
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmNUser.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmNewPass.resources
+C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmEditUser.resources
+C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.frmProducer.resources
+C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.Tools.frmNewProducer.resources

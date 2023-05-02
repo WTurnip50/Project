@@ -40,16 +40,50 @@ namespace PVL
         }
         private void btnMovies_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmMovies frm = new frmMovies();
-            frm.MdiParent = this;
-            frm.Show();
+            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmMovies);
+            if (frmo != null)
+            {
+                foreach (Form frmOpen in Application.OpenForms)
+                {
+                    if (frmOpen.GetType() == typeof(frmMovies))
+                    {
+                        frmOpen.Focus();
+                        frmOpen.WindowState = FormWindowState.Maximized;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                frmMovies frm = new frmMovies();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+
+            
         }
 
         private void btnDirectors_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmDirector frm = new frmDirector();
-            frm.MdiParent = this;
-            frm.Show();
+            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmDirector);
+            if (frmo != null)
+            {
+                foreach (Form frmOpen in Application.OpenForms)
+                {
+                    if (frmOpen.GetType() == typeof(frmDirector))
+                    {
+                        frmOpen.Focus();
+                        frmOpen.WindowState = FormWindowState.Maximized;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                frmDirector frm = new frmDirector();
+                frm.MdiParent = this;
+                frm.Show();
+            } 
         }
 
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -82,9 +116,25 @@ namespace PVL
 
         private void btnWriters_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmWriters frmWriters = new frmWriters();
-            frmWriters.MdiParent = this;
-            frmWriters.Show();
+            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmWriters);
+            if (frmo != null)
+            {
+                foreach (Form frmOpen in Application.OpenForms)
+                {
+                    if (frmOpen.GetType() == typeof(frmWriters))
+                    {
+                        frmOpen.Focus();
+                        frmOpen.WindowState = FormWindowState.Maximized;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                frmWriters frmWriters = new frmWriters();
+                frmWriters.MdiParent = this;
+                frmWriters.Show();
+            } 
         }
 
         private void btnNewUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -96,7 +146,6 @@ namespace PVL
             else
             {
                 frmNUser frmN = new frmNUser();
-                //frmN.MdiParent = this;
                 frmN.ShowDialog();
             }
             
@@ -114,6 +163,29 @@ namespace PVL
                 frm.ShowDialog();
             }
             
+        }
+
+        private void btnProducers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProducer);
+            if (frmo != null)
+            {
+                foreach (Form frmOpen in Application.OpenForms)
+                {
+                    if (frmOpen.GetType() == typeof(frmProducer))
+                    {
+                        frmOpen.Focus();
+                        frmOpen.WindowState = FormWindowState.Maximized;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                frmProducer frm = new frmProducer();
+                frm.MdiParent = this;
+                frm.Show();
+            } 
         }
     }
 }
