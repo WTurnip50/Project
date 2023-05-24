@@ -44,8 +44,9 @@ namespace PVL
             this.colidWriter = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidDirector = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidProducer = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colavailable = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colprecio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcMovies = new DevExpress.XtraGrid.GridControl();
+            this.peliculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.peliculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bar4 = new DevExpress.XtraBars.Bar();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -53,6 +54,7 @@ namespace PVL
             this.btnLoad = new DevExpress.XtraBars.BarButtonItem();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCart = new DevExpress.XtraBars.BarButtonItem();
             this.btnDrop = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -66,6 +68,7 @@ namespace PVL
             ((System.ComponentModel.ISupportInitialize)(this.producerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMovies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMovies)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peliculaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peliculaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
@@ -128,7 +131,7 @@ namespace PVL
             this.colidWriter,
             this.colidDirector,
             this.colidProducer,
-            this.colavailable});
+            this.colprecio});
             this.gvMovies.DetailHeight = 356;
             this.gvMovies.GridControl = this.gcMovies;
             this.gvMovies.Name = "gvMovies";
@@ -139,63 +142,49 @@ namespace PVL
             // colidMovie
             // 
             this.colidMovie.FieldName = "idMovie";
-            this.colidMovie.MinWidth = 27;
             this.colidMovie.Name = "colidMovie";
-            this.colidMovie.Width = 100;
             // 
             // coltitle
             // 
-            this.coltitle.Caption = "Título";
             this.coltitle.FieldName = "title";
-            this.coltitle.MinWidth = 27;
             this.coltitle.Name = "coltitle";
             this.coltitle.Visible = true;
             this.coltitle.VisibleIndex = 0;
-            this.coltitle.Width = 100;
             // 
             // colidWriter
             // 
-            this.colidWriter.Caption = "Escritor";
             this.colidWriter.ColumnEdit = this.rlupWriter;
             this.colidWriter.FieldName = "idWriter";
-            this.colidWriter.MinWidth = 27;
             this.colidWriter.Name = "colidWriter";
             this.colidWriter.Visible = true;
             this.colidWriter.VisibleIndex = 1;
-            this.colidWriter.Width = 100;
             // 
             // colidDirector
             // 
-            this.colidDirector.Caption = "Director";
             this.colidDirector.ColumnEdit = this.rlupDirector;
             this.colidDirector.FieldName = "idDirector";
-            this.colidDirector.MinWidth = 27;
             this.colidDirector.Name = "colidDirector";
             this.colidDirector.Visible = true;
             this.colidDirector.VisibleIndex = 2;
-            this.colidDirector.Width = 100;
             // 
             // colidProducer
             // 
-            this.colidProducer.Caption = "Productor";
             this.colidProducer.ColumnEdit = this.rlupProducer;
             this.colidProducer.FieldName = "idProducer";
-            this.colidProducer.MinWidth = 27;
             this.colidProducer.Name = "colidProducer";
             this.colidProducer.Visible = true;
             this.colidProducer.VisibleIndex = 3;
-            this.colidProducer.Width = 100;
             // 
-            // colavailable
+            // colprecio
             // 
-            this.colavailable.FieldName = "available";
-            this.colavailable.MinWidth = 27;
-            this.colavailable.Name = "colavailable";
-            this.colavailable.Width = 100;
+            this.colprecio.FieldName = "precio";
+            this.colprecio.Name = "colprecio";
+            this.colprecio.Visible = true;
+            this.colprecio.VisibleIndex = 4;
             // 
             // gcMovies
             // 
-            this.gcMovies.DataSource = this.peliculaBindingSource;
+            this.gcMovies.DataSource = this.peliculaBindingSource1;
             this.gcMovies.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcMovies.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gcMovies.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
@@ -215,6 +204,10 @@ namespace PVL
             this.gcMovies.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMovies});
             this.gcMovies.Click += new System.EventHandler(this.gcMovies_Click);
+            // 
+            // peliculaBindingSource1
+            // 
+            this.peliculaBindingSource1.DataSource = typeof(BML.Pelicula);
             // 
             // peliculaBindingSource
             // 
@@ -245,8 +238,9 @@ namespace PVL
             this.btnLoad,
             this.btnAdd,
             this.btnEdit,
-            this.btnDrop});
-            this.barManager1.MaxItemId = 4;
+            this.btnDrop,
+            this.btnCart});
+            this.barManager1.MaxItemId = 5;
             // 
             // bar2
             // 
@@ -258,6 +252,7 @@ namespace PVL
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnLoad, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnAdd, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnEdit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnCart, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnDrop, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.OptionsBar.DrawDragBorder = false;
@@ -289,6 +284,14 @@ namespace PVL
             this.btnEdit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.LargeImage")));
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
+            // 
+            // btnCart
+            // 
+            this.btnCart.Caption = "Agregar a carrito";
+            this.btnCart.Id = 4;
+            this.btnCart.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCart.ImageOptions.SvgImage")));
+            this.btnCart.Name = "btnCart";
+            this.btnCart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCart_ItemClick);
             // 
             // btnDrop
             // 
@@ -360,6 +363,7 @@ namespace PVL
             ((System.ComponentModel.ISupportInitialize)(this.producerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMovies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMovies)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peliculaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peliculaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
@@ -371,15 +375,9 @@ namespace PVL
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraGrid.GridControl gcMovies;
         private DevExpress.XtraGrid.Views.Grid.GridView gvMovies;
-        private DevExpress.XtraGrid.Columns.GridColumn colidMovie;
-        private DevExpress.XtraGrid.Columns.GridColumn coltitle;
-        private DevExpress.XtraGrid.Columns.GridColumn colidWriter;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rlupWriter;
-        private DevExpress.XtraGrid.Columns.GridColumn colidDirector;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rlupDirector;
-        private DevExpress.XtraGrid.Columns.GridColumn colidProducer;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rlupProducer;
-        private DevExpress.XtraGrid.Columns.GridColumn colavailable;
         private DevExpress.XtraBars.Bar bar4;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
@@ -395,5 +393,13 @@ namespace PVL
         private System.Windows.Forms.BindingSource writerBindingSource;
         private System.Windows.Forms.BindingSource directorBindingSource;
         private System.Windows.Forms.BindingSource producerBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colidMovie;
+        private DevExpress.XtraGrid.Columns.GridColumn coltitle;
+        private DevExpress.XtraGrid.Columns.GridColumn colidWriter;
+        private DevExpress.XtraGrid.Columns.GridColumn colidDirector;
+        private DevExpress.XtraGrid.Columns.GridColumn colidProducer;
+        private DevExpress.XtraGrid.Columns.GridColumn colprecio;
+        private System.Windows.Forms.BindingSource peliculaBindingSource1;
+        private DevExpress.XtraBars.BarButtonItem btnCart;
     }
 }

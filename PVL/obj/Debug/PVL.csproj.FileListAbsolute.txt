@@ -113,3 +113,5 @@ C:\Users\Israel\Documents\GitHub\Project\PVL\bin\Debug\DAL.dll
 C:\Users\Israel\Documents\GitHub\Project\PVL\bin\Debug\DAL.pdb
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.SSLogin.resources
 C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.WaitForm1.resources
+C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.ShoppingCart.resources
+C:\Users\Israel\Documents\GitHub\Project\PVL\obj\Debug\PVL.Sale.resources

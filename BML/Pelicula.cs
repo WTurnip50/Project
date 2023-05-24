@@ -17,6 +17,7 @@ namespace BML
         public int idWriter { get; set; }
         public int idDirector { get; set; }
         public int idProducer { get; set; }
+        public decimal precio { get; set; }
 
         public Pelicula() { }
 
@@ -27,6 +28,7 @@ namespace BML
             parametros.Add("@idWriter", idWriter);
             parametros.Add("@idDirector", idDirector);
             parametros.Add("@idProducer", idProducer);
+            parametros.Add("@precio", precio);
             return dataAccess.Execute("Movies_newMovie", parametros);
         }
 
@@ -38,6 +40,7 @@ namespace BML
             parametros.Add("@idWriter", idWriter);
             parametros.Add("@idDirector", idDirector);
             parametros.Add("@idProducer", idProducer);
+            parametros.Add("@precio", precio);
             return dataAccess.Execute("Movies_EditMovie", parametros);
         }
         public int Delete()

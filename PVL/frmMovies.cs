@@ -28,7 +28,7 @@ namespace PVL
         private void CargarRegistros()
         {
             //gcMovies.DataSource = movieBLL.GetAll();
-            peliculaBindingSource.DataSource = new Pelicula().GetAll();
+            peliculaBindingSource1.DataSource = new Pelicula().GetAll();
             gvMovies.BestFitColumns();
             rlupWriter.DataSource = new Writer().GetAll();
             rlupDirector.DataSource = new Director().GetAll();
@@ -100,6 +100,12 @@ namespace PVL
         {
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             SplashScreenManager.CloseForm();
+        }
+
+        private void btnCart_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShoppingCart cart = new ShoppingCart();
+            cart.ShowDialog();
         }
     }
 }

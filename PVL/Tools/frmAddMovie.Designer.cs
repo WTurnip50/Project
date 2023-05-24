@@ -31,7 +31,6 @@ namespace PVL
         {
             this.components = new System.ComponentModel.Container();
             this.rlupWriter = new DevExpress.XtraEditors.LookUpEdit();
-            this.writerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.directorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.producerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rlupDirector = new DevExpress.XtraEditors.LookUpEdit();
@@ -43,18 +42,22 @@ namespace PVL
             this.txtTitle = new DevExpress.XtraEditors.TextEdit();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.BtnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.writerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtPrecio = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.rlupWriter.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.directorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.producerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlupDirector.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlupProducer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecio.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // rlupWriter
             // 
-            this.rlupWriter.Location = new System.Drawing.Point(110, 118);
+            this.rlupWriter.Location = new System.Drawing.Point(110, 89);
             this.rlupWriter.Margin = new System.Windows.Forms.Padding(4);
             this.rlupWriter.Name = "rlupWriter";
             this.rlupWriter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -72,14 +75,10 @@ namespace PVL
             this.rlupWriter.Size = new System.Drawing.Size(167, 30);
             this.rlupWriter.TabIndex = 0;
             // 
-            // writerBindingSource
-            // 
-            this.writerBindingSource.DataSource = typeof(BML.Writer);
-            // 
             // rlupDirector
             // 
             this.rlupDirector.EditValue = "";
-            this.rlupDirector.Location = new System.Drawing.Point(110, 180);
+            this.rlupDirector.Location = new System.Drawing.Point(110, 139);
             this.rlupDirector.Margin = new System.Windows.Forms.Padding(4);
             this.rlupDirector.Name = "rlupDirector";
             this.rlupDirector.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -99,7 +98,7 @@ namespace PVL
             // rlupProducer
             // 
             this.rlupProducer.EditValue = "";
-            this.rlupProducer.Location = new System.Drawing.Point(110, 247);
+            this.rlupProducer.Location = new System.Drawing.Point(110, 190);
             this.rlupProducer.Margin = new System.Windows.Forms.Padding(4);
             this.rlupProducer.Name = "rlupProducer";
             this.rlupProducer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -117,7 +116,7 @@ namespace PVL
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(30, 124);
+            this.labelControl1.Location = new System.Drawing.Point(30, 95);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(38, 13);
@@ -126,7 +125,7 @@ namespace PVL
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(30, 187);
+            this.labelControl2.Location = new System.Drawing.Point(30, 146);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(41, 13);
@@ -135,7 +134,7 @@ namespace PVL
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(30, 253);
+            this.labelControl3.Location = new System.Drawing.Point(30, 196);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(51, 13);
@@ -183,6 +182,32 @@ namespace PVL
             this.BtnCancel.Text = "Cancelar";
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
+            // writerBindingSource
+            // 
+            this.writerBindingSource.DataSource = typeof(BML.Writer);
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(109, 241);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Properties.Appearance.Options.UseFont = true;
+            this.txtPrecio.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPrecio.Properties.Mask.EditMask = "d";
+            this.txtPrecio.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecio.Size = new System.Drawing.Size(167, 28);
+            this.txtPrecio.TabIndex = 11;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(29, 243);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(31, 13);
+            this.labelControl5.TabIndex = 10;
+            this.labelControl5.Text = "Precio";
+            // 
             // frmAddMovie
             // 
             this.AcceptButton = this.btnSave;
@@ -190,6 +215,8 @@ namespace PVL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancel;
             this.ClientSize = new System.Drawing.Size(289, 358);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtTitle);
@@ -210,12 +237,13 @@ namespace PVL
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAddMovie_FormClosing);
             this.Load += new System.EventHandler(this.frmAddMovie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rlupWriter.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.directorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.producerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlupDirector.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlupProducer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecio.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +263,7 @@ namespace PVL
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton BtnCancel;
         private System.Windows.Forms.BindingSource writerBindingSource;
+        private DevExpress.XtraEditors.TextEdit txtPrecio;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
     }
 }

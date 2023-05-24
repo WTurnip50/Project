@@ -105,7 +105,8 @@ namespace PVL
                         idWriter = idW,
                         idDirector = idD,
                         idProducer = idP,
-                        title = txtTitle.Text.Trim()
+                        title = txtTitle.Text.Trim(),
+                        precio = decimal.Parse(txtPrecio.Text)
                     }.Add() > 0)
                     {
                         Message(1);
@@ -120,12 +121,13 @@ namespace PVL
                 }
                 else
                 {
-                    if (new Pelicula() 
+                    if (new Pelicula()
                     { idMovie = this.idMovie,
-                      title = txtTitle.Text.Trim(),
-                      idProducer = idP,
-                      idDirector = idD,
-                      idWriter = idW
+                        title = txtTitle.Text.Trim(),
+                        idProducer = idP,
+                        idDirector = idD,
+                        idWriter = idW,
+                        precio = decimal.Parse(txtPrecio.Text) 
                     }.Update() > 0)
                     {
                         Message(3);
