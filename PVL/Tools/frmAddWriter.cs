@@ -1,21 +1,12 @@
-﻿using BLL;
-using BOL;
+﻿using BML;
 using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PVL
 {
     public partial class frmAddWriter : DevExpress.XtraEditors.XtraForm
     {
-        private WriterBLL writerBll = WriterBLL.Instance();
         private bool editMode = false;
         private string name = "";
         private bool editSave = false;
@@ -28,10 +19,11 @@ namespace PVL
         {
             InitializeComponent();
             this.id = id;
-            Writer writer = writerBll.GetByID(new BOL.Writer() { idWriter = this.id});
+            this.Text = "Editar Escritor";
+            Writer writer = new Writer(){ idWriter = this.id }.GetByID();
             MessageBox.Show(writer.name);
             this.name = writer.name.Trim();
-            txtWriter.Text = name; 
+            txtWriter.Text = name;
             this.editMode = true;
         }
 
@@ -56,14 +48,14 @@ namespace PVL
         {
             this.txtWriter.Text = "";
             this.txtWriter.Focus();
-        } 
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!isEdit())
             {
                 if (!txtWriter.Text.Equals(""))
                 {
-                    if (writerBll.Add(new BOL.Writer() { name = txtWriter.Text.Trim() }))
+                    if (new Writer(){ name = txtWriter.Text.Trim() }.Add() > 0)
                     {
                         XtraMessageBox.Show("Elemento almacenado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clean();
@@ -75,7 +67,7 @@ namespace PVL
             {
                 if (!txtWriter.Text.Equals(""))
                 {
-                    if (writerBll.Edit(new BOL.Writer() { idWriter = this.id, name = txtWriter.Text.Trim() }))
+                    if (new Writer() { idWriter = this.id, name = txtWriter.Text.Trim() }.Update() > 0)
                     {
                         XtraMessageBox.Show("Elemento actualizado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Dispose();
@@ -95,7 +87,7 @@ namespace PVL
                     {
                         if (isEdit())
                         {
-                            if (writerBll.Edit(new BOL.Writer() { idWriter = this.id, name = txtWriter.Text.Trim() }))
+                            if (new Writer() { idWriter = this.id, name = txtWriter.Text.Trim() }.Update() > 0)
                             {
                                 XtraMessageBox.Show("Se han guardado los cambios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
@@ -103,7 +95,7 @@ namespace PVL
                         }
                         else
                         {
-                            if (writerBll.Add(new BOL.Writer() { name = this.txtWriter.Text.Trim() }))
+                            if (new Writer() { name = txtWriter.Text.Trim() }.Add() > 0)
                             {
                                 XtraMessageBox.Show("Se han guardado los cambios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }

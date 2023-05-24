@@ -1,43 +1,31 @@
-﻿using BLL;
-using BOL;
+﻿using BML;
 using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PVL
 {
     public partial class frmAddMovie : DevExpress.XtraEditors.XtraForm
     {
-        private MovieBLL movieBLL = MovieBLL.Instance();
-        private WriterBLL writerBLL = WriterBLL.Instance();
-        private DirectorBLL directorBLL = DirectorBLL.Instance();
-        private ProducerBLL producerBLL = ProducerBLL.Instance();
         private int idMovie = 0;
         private int idW = 0, idD = 0, idP = 0;
         private bool edit = false;
         public frmAddMovie()
         {
             InitializeComponent();
-            
+
         }
 
         public frmAddMovie(int id)
         {
             InitializeComponent();
             this.idMovie = id;
-            Movie movie = movieBLL.GetByID(new BOL.Movie() { idMovie = this.idMovie });
-            this.idW = movie.idMovie;
-            this.idD = movie.idDirector;
-            this.idP = movie.idProducer;
+            this.btnSave.Text = "Actualizar";
+            Pelicula movie = new Pelicula() { idMovie = this.idMovie }.GetByID();
+            this.idW = movie.idWriter -1;
+            this.idD = movie.idDirector -1;
+            this.idP = movie.idProducer -1;
             this.Text = "-- Editar Película -- ";
-            this.rlupDirector.ItemIndex = 2;
             this.txtTitle.Text = movie.title;
             this.edit = true;
         }
@@ -46,12 +34,32 @@ namespace PVL
         {
             CargarRegistros();
         }
-
+        private void Message(int switch_on)
+        {
+            switch (switch_on)
+            {
+                case 1:
+                    XtraMessageBox.Show("Elemento almacenado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 2:
+                    XtraMessageBox.Show("El campo de texto se encuentra vacio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.txtTitle.Focus();
+                    break;
+                case 3:
+                    XtraMessageBox.Show("Elemento actualizado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 4:
+                    XtraMessageBox.Show("Error en la operación", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                default:
+                    break;
+            }
+        }
         private void frmAddMovie_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!edit)
             {
-                if(XtraMessageBox.Show("¿Desea cerrar el formulario?","Aviso",MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (XtraMessageBox.Show("¿Desea cerrar el formulario?", "Aviso", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     e.Cancel = true;
                 }
@@ -65,9 +73,9 @@ namespace PVL
 
         private void CargarRegistros()
         {
-            rlupWriter.Properties.DataSource = writerBLL.GetAll();
-            rlupDirector.Properties.DataSource = directorBLL.GetAll();
-            rlupProducer.Properties.DataSource = producerBLL.GetAll();
+            rlupWriter.Properties.DataSource = new Writer().GetAll();
+            rlupDirector.Properties.DataSource = new Director().GetAll();
+            rlupProducer.Properties.DataSource = new Producer().GetAll();
             rlupWriter.ItemIndex = this.idW;
             rlupDirector.ItemIndex = this.idD;
             rlupProducer.ItemIndex = this.idP;
@@ -75,7 +83,7 @@ namespace PVL
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            SaveEdit(this.edit); 
+            SaveEdit(this.edit);
         }
 
         private void SaveEdit(bool edit)
@@ -83,48 +91,48 @@ namespace PVL
             int idW = (int)rlupWriter.EditValue;
             int idD = (int)rlupDirector.EditValue;
             int idP = (int)rlupProducer.EditValue;
-            string title = txtTitle.Text.Trim();
+
             if (!edit)
             {
-                if (title.Equals(""))
+                if (txtTitle.Text.Trim().Equals(""))
                 {
-                    XtraMessageBox.Show("El campo de texto se encuentra vacio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    this.txtTitle.Focus();
+                    Message(2);
                 }
                 else
                 {
-                    if (movieBLL.Add(new BOL.Movie()
+                    if (new Pelicula()
                     {
                         idWriter = idW,
                         idDirector = idD,
                         idProducer = idP,
-                        title = title
-                    }))
+                        title = txtTitle.Text.Trim()
+                    }.Add() > 0)
                     {
-                        XtraMessageBox.Show("Elemento almacenado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Message(1);
                     }
                 }
             }
             else
             {
-                if (title.Equals(""))
+                if (txtTitle.Text.Trim().Equals(""))
                 {
-                    XtraMessageBox.Show("El campo de texto se encuentra vacio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    this.txtTitle.Focus();
+                    Message(2);
                 }
                 else
                 {
-                    if (movieBLL.Edit(new BOL.Movie()
+                    if (new Pelicula() 
+                    { idMovie = this.idMovie,
+                      title = txtTitle.Text.Trim(),
+                      idProducer = idP,
+                      idDirector = idD,
+                      idWriter = idW
+                    }.Update() > 0)
                     {
-                        idMovie = this.idMovie,
-                        idWriter = idW,
-                        idDirector = idD,
-                        idProducer = idP,
-                        title = title
-                    }))
+                        Message(3);
+                    }
+                    else
                     {
-                        XtraMessageBox.Show("Elemento actualizado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
+                        Message(4);
                     }
                 }
             }

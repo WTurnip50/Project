@@ -44,6 +44,7 @@ namespace PVL
             this.txtDirector.Name = "txtDirector";
             this.txtDirector.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtDirector.Properties.Appearance.Options.UseFont = true;
+            this.txtDirector.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDirector.Size = new System.Drawing.Size(297, 28);
             this.txtDirector.TabIndex = 2;
             // 

@@ -44,12 +44,14 @@ namespace PVL
             this.btnNewPassword = new DevExpress.XtraBars.BarSubItem();
             this.btnNewUser = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewPass = new DevExpress.XtraBars.BarButtonItem();
+            this.skbCustom = new DevExpress.XtraBars.SkinBarSubItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::PVL.WaitForm1), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.mdiMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mnMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
@@ -78,8 +80,9 @@ namespace PVL
             this.btnNewPassword,
             this.btnNewUser,
             this.btnNewPass,
-            this.btnProducers});
-            this.mnMain.MaxItemId = 10;
+            this.btnProducers,
+            this.skbCustom});
+            this.mnMain.MaxItemId = 11;
             // 
             // bar1
             // 
@@ -90,7 +93,8 @@ namespace PVL
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnFile, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnNewPassword)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnNewPassword),
+            new DevExpress.XtraBars.LinkPersistInfo(this.skbCustom)});
             this.bar1.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.All;
             this.bar1.OptionsBar.DrawBorder = false;
             this.bar1.OptionsBar.DrawDragBorder = false;
@@ -175,6 +179,12 @@ namespace PVL
             this.btnNewPass.Name = "btnNewPass";
             this.btnNewPass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewPass_ItemClick);
             // 
+            // skbCustom
+            // 
+            this.skbCustom.Caption = "Personalización";
+            this.skbCustom.Id = 10;
+            this.skbCustom.Name = "skbCustom";
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -224,6 +234,10 @@ namespace PVL
             this.fluentDesignFormControl1.TabIndex = 9;
             this.fluentDesignFormControl1.TabStop = false;
             // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +248,7 @@ namespace PVL
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("frmMenu.IconOptions.SvgImage")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -271,5 +286,7 @@ namespace PVL
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
         private DevExpress.XtraBars.BarButtonItem btnProducers;
+        private DevExpress.XtraBars.SkinBarSubItem skbCustom;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

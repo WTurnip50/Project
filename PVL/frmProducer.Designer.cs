@@ -30,6 +30,7 @@ namespace PVL
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProducer));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
@@ -75,37 +76,47 @@ namespace PVL
             this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRefresh),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnAdd),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnEdit),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnDrop)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnAdd, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnEdit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnDrop, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar1.OptionsBar.DrawBorder = false;
+            this.bar1.OptionsBar.DrawDragBorder = false;
             this.bar1.Text = "Herramientas";
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Caption = "Refresh";
+            this.btnRefresh.Caption = "Actualizar";
             this.btnRefresh.Id = 0;
+            this.btnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.ImageOptions.Image")));
+            this.btnRefresh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.ImageOptions.LargeImage")));
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefresh_ItemClick);
             // 
             // btnAdd
             // 
-            this.btnAdd.Caption = "Add";
+            this.btnAdd.Caption = "Agregar";
             this.btnAdd.Id = 1;
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
+            this.btnAdd.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.LargeImage")));
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
             // 
             // btnEdit
             // 
-            this.btnEdit.Caption = "Edit";
+            this.btnEdit.Caption = "Editar";
             this.btnEdit.Id = 2;
+            this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
+            this.btnEdit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.LargeImage")));
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // btnDrop
             // 
-            this.btnDrop.Caption = "Drop";
+            this.btnDrop.Caption = "Eliminar";
             this.btnDrop.Id = 3;
+            this.btnDrop.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDrop.ImageOptions.Image")));
+            this.btnDrop.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDrop.ImageOptions.LargeImage")));
             this.btnDrop.Name = "btnDrop";
             this.btnDrop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDrop_ItemClick);
             // 
@@ -115,7 +126,7 @@ namespace PVL
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(476, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(476, 28);
             // 
             // barDockControlBottom
             // 
@@ -129,34 +140,30 @@ namespace PVL
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 228);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 224);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(476, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(476, 28);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 228);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 224);
             // 
             // gcProducer
             // 
             this.gcProducer.DataSource = this.producerBindingSource;
             this.gcProducer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcProducer.Location = new System.Drawing.Point(0, 24);
+            this.gcProducer.Location = new System.Drawing.Point(0, 28);
             this.gcProducer.MainView = this.gvProducer;
             this.gcProducer.MenuManager = this.barManager1;
             this.gcProducer.Name = "gcProducer";
-            this.gcProducer.Size = new System.Drawing.Size(476, 228);
+            this.gcProducer.Size = new System.Drawing.Size(476, 224);
             this.gcProducer.TabIndex = 4;
             this.gcProducer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvProducer});
-            // 
-            // producerBindingSource
-            // 
-            this.producerBindingSource.DataSource = typeof(BOL.Producer);
             // 
             // gvProducer
             // 

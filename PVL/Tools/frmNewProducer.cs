@@ -1,14 +1,6 @@
-﻿using BLL;
-using BOL;
+﻿using BML;
 using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PVL.Tools
@@ -18,7 +10,6 @@ namespace PVL.Tools
         private int id = 0;
         private bool editMode = false;
         private bool editSave = false;
-        private ProducerBLL producerBLL = ProducerBLL.Instance();
         public frmNewProducer()
         {
             InitializeComponent();
@@ -27,7 +18,7 @@ namespace PVL.Tools
         {
             InitializeComponent();
             this.id = id;
-            Producer prod = producerBLL.GetByID(new BOL.Producer() { idProducer = this.id});
+            Producer prod = new Producer() { idProducer = this.id }.GetByID();//producerBLL.GetByID(new BOL.Producer() { idProducer = this.id});
             txtName.Text = prod.name;
             editMode = true;
         }
@@ -38,6 +29,7 @@ namespace PVL.Tools
             {
                 case 1:
                     XtraMessageBox.Show("Campo vacio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.txtName.ErrorText = "Introduza un valor";
                     this.txtName.Focus();
                     break;
                 case 2:
@@ -50,7 +42,7 @@ namespace PVL.Tools
                     XtraMessageBox.Show("Operación cancelada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 default:
-                    XtraMessageBox.Show("Mensaje por default", "Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Mensaje por default", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
             }
         }
@@ -61,7 +53,7 @@ namespace PVL.Tools
             {
                 if (!txtName.Text.Trim().Equals(""))
                 {
-                    if (producerBLL.Add(new BOL.Producer() { name = txtName.Text.Trim() }))
+                    if (new Producer() {name = txtName.Text.Trim() }.Add() > 0)
                     {
                         Message(2);
                     }
@@ -73,23 +65,25 @@ namespace PVL.Tools
             }
             else
             {
-                if(XtraMessageBox.Show("¿Desea guardar el cambio?", "Pregunta", 
-                    MessageBoxButtons.YesNo,MessageBoxIcon.Question) != DialogResult.No)
+                if (XtraMessageBox.Show("¿Desea guardar el cambio?", "Pregunta",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.No)
                 {
-                    if(producerBLL.Edit(new BOL.Producer() { idProducer = this.id, name = txtName.Text.Trim() }))
+                    if (new Producer() { idProducer = this.id, name = txtName.Text.Trim() }.Update() > 0)
                     {
                         Message(3);
+                        editSave = true;
+                        this.Close();
                     }
                 }
             }
-            
+
         }
 
         private void frmNewProducer_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!editMode)
             {
-                if(XtraMessageBox.Show("¿Desea cerrar el formulario?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                if (XtraMessageBox.Show("¿Desea cerrar el formulario?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                 {
                     Message(4);
                     e.Cancel = true;
@@ -99,10 +93,10 @@ namespace PVL.Tools
             {
                 if (!editSave)
                 {
-                    if(XtraMessageBox.Show("Se han realizado cambios al registro \n ¿Desea guardar los cambios?","Advertencia"
-                        ,MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.No)
+                    if (XtraMessageBox.Show("Se han realizado cambios al registro \n ¿Desea guardar los cambios?", "Advertencia"
+                        , MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.No)
                     {
-                        if(producerBLL.Edit(new BOL.Producer() { idProducer = this.id, name = txtName.Text.Trim() }))
+                        if (new Producer() { idProducer = this.id, name = txtName.Text.Trim() }.Update() > 0)
                         {
                             Message(3);
                         }

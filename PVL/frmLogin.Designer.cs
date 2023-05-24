@@ -31,16 +31,16 @@ namespace PVL
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
-            this.txtUser = new DevExpress.XtraEditors.TextEdit();
-            this.txtPass = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPass = new DevExpress.XtraEditors.TextEdit();
+            this.txtUser = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -52,7 +52,6 @@ namespace PVL
             this.btnLogin.Appearance.Options.UseBackColor = true;
             this.btnLogin.Appearance.Options.UseBorderColor = true;
             this.btnLogin.Appearance.Options.UseFont = true;
-            this.btnLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.ImageOptions.Image")));
             this.btnLogin.Location = new System.Drawing.Point(207, 309);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
@@ -60,53 +59,6 @@ namespace PVL
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Iniciar Sesión";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // txtUser
-            // 
-            this.txtUser.Location = new System.Drawing.Point(100, 96);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Properties.Appearance.Options.UseFont = true;
-            this.txtUser.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.txtUser.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUser.Size = new System.Drawing.Size(227, 30);
-            this.txtUser.TabIndex = 0;
-            // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(100, 207);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Properties.Appearance.Options.UseFont = true;
-            this.txtPass.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.txtPass.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPass.Properties.UseSystemPasswordChar = true;
-            this.txtPass.Size = new System.Drawing.Size(227, 30);
-            this.txtPass.TabIndex = 1;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(7, 98);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(54, 21);
-            this.labelControl1.TabIndex = 3;
-            this.labelControl1.Text = "Usuario";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(7, 209);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(79, 21);
-            this.labelControl2.TabIndex = 4;
-            this.labelControl2.Text = "Contraseña";
             // 
             // btnCancel
             // 
@@ -117,7 +69,6 @@ namespace PVL
             this.btnCancel.Appearance.Options.UseBorderColor = true;
             this.btnCancel.Appearance.Options.UseFont = true;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
             this.btnCancel.Location = new System.Drawing.Point(28, 309);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
@@ -143,9 +94,56 @@ namespace PVL
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(346, 392);
+            this.groupControl1.Size = new System.Drawing.Size(339, 354);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "  Bienvenido Ingrese Sus Credenciales";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(7, 209);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(79, 21);
+            this.labelControl2.TabIndex = 4;
+            this.labelControl2.Text = "Contraseña";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(7, 98);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(54, 21);
+            this.labelControl1.TabIndex = 3;
+            this.labelControl1.Text = "Usuario";
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(100, 207);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Properties.Appearance.Options.UseFont = true;
+            this.txtPass.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.txtPass.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPass.Properties.UseSystemPasswordChar = true;
+            this.txtPass.Size = new System.Drawing.Size(227, 30);
+            this.txtPass.TabIndex = 1;
+            // 
+            // txtUser
+            // 
+            this.txtUser.Location = new System.Drawing.Point(100, 96);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Properties.Appearance.Options.UseFont = true;
+            this.txtUser.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.txtUser.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtUser.Size = new System.Drawing.Size(227, 30);
+            this.txtUser.TabIndex = 0;
             // 
             // frmLogin
             // 
@@ -153,7 +151,7 @@ namespace PVL
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(346, 392);
+            this.ClientSize = new System.Drawing.Size(339, 354);
             this.Controls.Add(this.groupControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -164,11 +162,12 @@ namespace PVL
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de sesión";
             this.Load += new System.EventHandler(this.frmLogin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).EndInit();
+            this.Shown += new System.EventHandler(this.frmLogin_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

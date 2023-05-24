@@ -41,21 +41,22 @@ namespace PVL
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(11, 30);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl1.Location = new System.Drawing.Point(9, 23);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(73, 28);
+            this.labelControl1.Size = new System.Drawing.Size(58, 21);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Nombre";
             // 
             // txtWriter
             // 
-            this.txtWriter.Location = new System.Drawing.Point(96, 36);
-            this.txtWriter.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtWriter.Location = new System.Drawing.Point(82, 28);
+            this.txtWriter.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtWriter.Name = "txtWriter";
             this.txtWriter.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWriter.Properties.Appearance.Options.UseFont = true;
-            this.txtWriter.Size = new System.Drawing.Size(378, 34);
+            this.txtWriter.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtWriter.Size = new System.Drawing.Size(324, 28);
             this.txtWriter.TabIndex = 1;
             // 
             // btnSave
@@ -63,10 +64,10 @@ namespace PVL
             this.btnSave.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(356, 127);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSave.Location = new System.Drawing.Point(305, 97);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(118, 36);
+            this.btnSave.Size = new System.Drawing.Size(101, 28);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Guardar";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -77,24 +78,25 @@ namespace PVL
             this.btnCancel.Appearance.Options.UseFont = true;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
-            this.btnCancel.Location = new System.Drawing.Point(96, 127);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnCancel.Location = new System.Drawing.Point(82, 97);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(118, 36);
+            this.btnCancel.Size = new System.Drawing.Size(101, 28);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancelar";
             // 
             // frmAddWriter
             // 
             this.AcceptButton = this.btnSave;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(489, 215);
+            this.ClientSize = new System.Drawing.Size(419, 164);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtWriter);
             this.Controls.Add(this.labelControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAddWriter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Añadir Escritor";

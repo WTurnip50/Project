@@ -1,21 +1,16 @@
-﻿using BLL;
-using BOL;
+﻿using BML;
 using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PVL
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
-        private UserBLL userBLL = UserBLL.Instance(); 
+        //private UserBLL userBLL = UserBLL.Instance(); 
+        SplashScreenManager sm = new SplashScreenManager();
+        
         public frmLogin()
         {
             InitializeComponent();
@@ -28,14 +23,16 @@ namespace PVL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            User user = userBLL.Login(new BOL.User() { username = txtUser.Text.Trim(), password = txtPass.Text.Trim() });
+            User user = new User() { username = this.txtUser.Text.Trim(), password = txtPass.Text.Trim()}.Login();
             if(user!= null)
             {
                 XtraMessageBox.Show("Bienvenido: " + txtUser.Text, "Inicio de sesión", MessageBoxButtons.OK);
                 this.txtPass.Text = "";
                 this.txtUser.Text = "";
                 this.txtUser.Focus();
+                sm.ShowWaitForm();
                 this.Hide();
+                sm.CloseWaitForm();
                 frmMenu frm = new frmMenu(user.SU);
                 frm.Show();
             }
@@ -48,6 +45,11 @@ namespace PVL
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmLogin_Shown(object sender, EventArgs e)
+        {
+            
         }
     }
 }

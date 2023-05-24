@@ -88,7 +88,7 @@ namespace PVL
             // 
             // btnLoad
             // 
-            this.btnLoad.Caption = "Load";
+            this.btnLoad.Caption = "Actualizar";
             this.btnLoad.Id = 1;
             this.btnLoad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLoad.ImageOptions.Image")));
             this.btnLoad.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoad.ImageOptions.LargeImage")));
@@ -97,7 +97,7 @@ namespace PVL
             // 
             // btnAdd
             // 
-            this.btnAdd.Caption = "Add";
+            this.btnAdd.Caption = "Agregar";
             this.btnAdd.Id = 2;
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.LargeImage")));
@@ -106,7 +106,7 @@ namespace PVL
             // 
             // btnEdit
             // 
-            this.btnEdit.Caption = "Edit";
+            this.btnEdit.Caption = "Editar";
             this.btnEdit.Id = 3;
             this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
             this.btnEdit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.LargeImage")));
@@ -115,7 +115,7 @@ namespace PVL
             // 
             // btnDrop
             // 
-            this.btnDrop.Caption = "Drop";
+            this.btnDrop.Caption = "Eliminar";
             this.btnDrop.Id = 4;
             this.btnDrop.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDrop.ImageOptions.Image")));
             this.btnDrop.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDrop.ImageOptions.LargeImage")));
@@ -128,31 +128,35 @@ namespace PVL
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.mnWriter;
-            this.barDockControlTop.Size = new System.Drawing.Size(847, 33);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlTop.Size = new System.Drawing.Size(726, 28);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 554);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 424);
             this.barDockControlBottom.Manager = this.mnWriter;
-            this.barDockControlBottom.Size = new System.Drawing.Size(847, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(726, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 33);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
             this.barDockControlLeft.Manager = this.mnWriter;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 521);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 396);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(847, 33);
+            this.barDockControlRight.Location = new System.Drawing.Point(726, 28);
             this.barDockControlRight.Manager = this.mnWriter;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 521);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 396);
             // 
             // barCheckItem1
             // 
@@ -164,20 +168,14 @@ namespace PVL
             // 
             this.gcWriter.DataSource = this.writerBindingSource;
             this.gcWriter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcWriter.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gcWriter.Location = new System.Drawing.Point(0, 33);
+            this.gcWriter.Location = new System.Drawing.Point(0, 28);
             this.gcWriter.MainView = this.gvWriter;
-            this.gcWriter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcWriter.MenuManager = this.mnWriter;
             this.gcWriter.Name = "gcWriter";
-            this.gcWriter.Size = new System.Drawing.Size(847, 521);
+            this.gcWriter.Size = new System.Drawing.Size(726, 396);
             this.gcWriter.TabIndex = 4;
             this.gcWriter.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvWriter});
-            // 
-            // writerBindingSource
-            // 
-            this.writerBindingSource.DataSource = typeof(BOL.Writer);
             // 
             // gvWriter
             // 
@@ -185,43 +183,45 @@ namespace PVL
             this.colidWriter,
             this.colname,
             this.colactivo});
-            this.gvWriter.DetailHeight = 437;
+            this.gvWriter.DetailHeight = 334;
             this.gvWriter.GridControl = this.gcWriter;
             this.gvWriter.Name = "gvWriter";
+            this.gvWriter.OptionsBehavior.Editable = false;
             // 
             // colidWriter
             // 
             this.colidWriter.FieldName = "idWriter";
-            this.colidWriter.MinWidth = 31;
+            this.colidWriter.MinWidth = 27;
             this.colidWriter.Name = "colidWriter";
-            this.colidWriter.Width = 117;
+            this.colidWriter.Width = 100;
             // 
             // colname
             // 
             this.colname.FieldName = "name";
-            this.colname.MinWidth = 31;
+            this.colname.MinWidth = 27;
             this.colname.Name = "colname";
             this.colname.Visible = true;
             this.colname.VisibleIndex = 0;
-            this.colname.Width = 117;
+            this.colname.Width = 100;
             // 
             // colactivo
             // 
             this.colactivo.FieldName = "activo";
-            this.colactivo.MinWidth = 31;
+            this.colactivo.MinWidth = 27;
             this.colactivo.Name = "colactivo";
-            this.colactivo.Width = 117;
+            this.colactivo.Width = 100;
             // 
             // frmWriters
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 554);
+            this.ClientSize = new System.Drawing.Size(726, 424);
             this.Controls.Add(this.gcWriter);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmWriters";
             this.Text = "Lista de Escritores";
             this.Load += new System.EventHandler(this.frmWriters_Load);

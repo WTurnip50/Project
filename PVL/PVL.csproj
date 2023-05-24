@@ -56,17 +56,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SSLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SSLogin.Designer.cs">
+      <DependentUpon>SSLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\frmEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tools\frmEditUser.Designer.cs">
       <DependentUpon>frmEditUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmGrant.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGrant.Designer.cs">
-      <DependentUpon>frmGrant.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\frmNewPass.cs">
       <SubType>Form</SubType>
@@ -122,12 +122,6 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +142,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SSLogin.resx">
+      <DependentUpon>SSLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\frmEditUser.resx">
       <DependentUpon>frmEditUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,9 +181,6 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,8 +199,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\BML.Director.datasource" />
+    <None Include="Properties\DataSources\BML.Pelicula.datasource" />
+    <None Include="Properties\DataSources\BML.Producer.datasource" />
+    <None Include="Properties\DataSources\BML.Writer.datasource" />
     <None Include="Properties\DataSources\BOL.Director.datasource" />
     <None Include="Properties\DataSources\BOL.Movie.datasource" />
     <None Include="Properties\DataSources\BOL.Movies.datasource" />
@@ -217,14 +225,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{ABB1B7C8-F3D0-48A1-B982-B89D63035E5B}</Project>
-      <Name>BLL</Name>
+    <ProjectReference Include="..\BML\BML.csproj">
+      <Project>{4b237d65-805d-45a5-a6ed-a02a977a1df0}</Project>
+      <Name>BML</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BOL\BOL.csproj">
-      <Project>{2809F380-B112-4512-91B4-14D93C57E8B9}</Project>
-      <Name>BOL</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moviesIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cine.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

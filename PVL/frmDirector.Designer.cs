@@ -88,7 +88,7 @@ namespace PVL
             // 
             // btnLoad
             // 
-            this.btnLoad.Caption = "Load";
+            this.btnLoad.Caption = "Actualizar";
             this.btnLoad.Id = 0;
             this.btnLoad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLoad.ImageOptions.Image")));
             this.btnLoad.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoad.ImageOptions.LargeImage")));
@@ -97,7 +97,7 @@ namespace PVL
             // 
             // btnAdd
             // 
-            this.btnAdd.Caption = "Add";
+            this.btnAdd.Caption = "Agregar";
             this.btnAdd.Id = 1;
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.LargeImage")));
@@ -106,7 +106,7 @@ namespace PVL
             // 
             // btnEdit
             // 
-            this.btnEdit.Caption = "Edit";
+            this.btnEdit.Caption = "Editar";
             this.btnEdit.Id = 2;
             this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
             this.btnEdit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.LargeImage")));
@@ -115,7 +115,7 @@ namespace PVL
             // 
             // btnDrop
             // 
-            this.btnDrop.Caption = "Drop";
+            this.btnDrop.Caption = "Eliminar";
             this.btnDrop.Id = 3;
             this.btnDrop.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDrop.ImageOptions.Image")));
             this.btnDrop.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDrop.ImageOptions.LargeImage")));
@@ -128,31 +128,35 @@ namespace PVL
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.mnDirector;
-            this.barDockControlTop.Size = new System.Drawing.Size(799, 33);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlTop.Size = new System.Drawing.Size(685, 28);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 570);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 436);
             this.barDockControlBottom.Manager = this.mnDirector;
-            this.barDockControlBottom.Size = new System.Drawing.Size(799, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(685, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 33);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
             this.barDockControlLeft.Manager = this.mnDirector;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 537);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 408);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(799, 33);
+            this.barDockControlRight.Location = new System.Drawing.Point(685, 28);
             this.barDockControlRight.Manager = this.mnDirector;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 537);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 408);
             // 
             // bar2
             // 
@@ -180,21 +184,17 @@ namespace PVL
             // 
             this.gcDirector.DataSource = this.directorBindingSource;
             this.gcDirector.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcDirector.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.gcDirector.Location = new System.Drawing.Point(0, 33);
+            this.gcDirector.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
+            this.gcDirector.Location = new System.Drawing.Point(0, 28);
             this.gcDirector.MainView = this.gvDirector;
-            this.gcDirector.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.gcDirector.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.gcDirector.MenuManager = this.mnDirector;
             this.gcDirector.Name = "gcDirector";
-            this.gcDirector.Size = new System.Drawing.Size(799, 537);
+            this.gcDirector.Size = new System.Drawing.Size(685, 408);
             this.gcDirector.TabIndex = 4;
             this.gcDirector.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDirector});
             this.gcDirector.Click += new System.EventHandler(this.gcDirector_Click);
-            // 
-            // directorBindingSource
-            // 
-            this.directorBindingSource.DataSource = typeof(BOL.Director);
             // 
             // gvDirector
             // 
@@ -202,7 +202,7 @@ namespace PVL
             this.colidDirector,
             this.colname,
             this.colactivo});
-            this.gvDirector.DetailHeight = 852;
+            this.gvDirector.DetailHeight = 652;
             this.gvDirector.GridControl = this.gcDirector;
             this.gvDirector.Name = "gvDirector";
             this.gvDirector.OptionsBehavior.Editable = false;
@@ -210,36 +210,37 @@ namespace PVL
             // colidDirector
             // 
             this.colidDirector.FieldName = "idDirector";
-            this.colidDirector.MinWidth = 61;
+            this.colidDirector.MinWidth = 52;
             this.colidDirector.Name = "colidDirector";
-            this.colidDirector.Width = 227;
+            this.colidDirector.Width = 195;
             // 
             // colname
             // 
             this.colname.FieldName = "name";
-            this.colname.MinWidth = 61;
+            this.colname.MinWidth = 52;
             this.colname.Name = "colname";
             this.colname.Visible = true;
             this.colname.VisibleIndex = 0;
-            this.colname.Width = 227;
+            this.colname.Width = 195;
             // 
             // colactivo
             // 
             this.colactivo.FieldName = "activo";
-            this.colactivo.MinWidth = 61;
+            this.colactivo.MinWidth = 52;
             this.colactivo.Name = "colactivo";
-            this.colactivo.Width = 227;
+            this.colactivo.Width = 195;
             // 
             // frmDirector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 570);
+            this.ClientSize = new System.Drawing.Size(685, 436);
             this.Controls.Add(this.gcDirector);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDirector";
             this.Text = "Directores de cine";
             this.Load += new System.EventHandler(this.frmDirector_Load);

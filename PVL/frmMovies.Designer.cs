@@ -32,14 +32,12 @@ namespace PVL
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMovies));
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.moviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.writerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.directorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.producerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.movieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rlupWriter = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.writerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rlupDirector = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.directorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rlupProducer = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.producerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvMovies = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colidMovie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltitle = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,6 +46,7 @@ namespace PVL
             this.colidProducer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colavailable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcMovies = new DevExpress.XtraGrid.GridControl();
+            this.peliculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bar4 = new DevExpress.XtraBars.Bar();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -59,16 +58,15 @@ namespace PVL
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.directorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.producerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlupWriter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlupDirector)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.directorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlupProducer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMovies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMovies)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peliculaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,26 +78,6 @@ namespace PVL
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.Text = "Herramientas";
             // 
-            // moviesBindingSource
-            // 
-            this.moviesBindingSource.DataSource = typeof(BOL.Movies);
-            // 
-            // writerBindingSource
-            // 
-            this.writerBindingSource.DataSource = typeof(BOL.Writer);
-            // 
-            // directorBindingSource
-            // 
-            this.directorBindingSource.DataSource = typeof(BOL.Director);
-            // 
-            // producerBindingSource
-            // 
-            this.producerBindingSource.DataSource = typeof(BOL.Producer);
-            // 
-            // movieBindingSource
-            // 
-            this.movieBindingSource.DataSource = typeof(BOL.Movie);
-            // 
             // rlupWriter
             // 
             this.rlupWriter.AutoHeight = false;
@@ -109,6 +87,10 @@ namespace PVL
             this.rlupWriter.DisplayMember = "name";
             this.rlupWriter.Name = "rlupWriter";
             this.rlupWriter.ValueMember = "idWriter";
+            // 
+            // writerBindingSource
+            // 
+            this.writerBindingSource.DataSource = typeof(BML.Writer);
             // 
             // rlupDirector
             // 
@@ -120,6 +102,10 @@ namespace PVL
             this.rlupDirector.Name = "rlupDirector";
             this.rlupDirector.ValueMember = "idDirector";
             // 
+            // directorBindingSource
+            // 
+            this.directorBindingSource.DataSource = typeof(BML.Director);
+            // 
             // rlupProducer
             // 
             this.rlupProducer.AutoHeight = false;
@@ -130,6 +116,10 @@ namespace PVL
             this.rlupProducer.Name = "rlupProducer";
             this.rlupProducer.ValueMember = "idProducer";
             // 
+            // producerBindingSource
+            // 
+            this.producerBindingSource.DataSource = typeof(BML.Producer);
+            // 
             // gvMovies
             // 
             this.gvMovies.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -139,7 +129,7 @@ namespace PVL
             this.colidDirector,
             this.colidProducer,
             this.colavailable});
-            this.gvMovies.DetailHeight = 465;
+            this.gvMovies.DetailHeight = 356;
             this.gvMovies.GridControl = this.gcMovies;
             this.gvMovies.Name = "gvMovies";
             this.gvMovies.OptionsBehavior.Editable = false;
@@ -149,82 +139,86 @@ namespace PVL
             // colidMovie
             // 
             this.colidMovie.FieldName = "idMovie";
-            this.colidMovie.MinWidth = 31;
+            this.colidMovie.MinWidth = 27;
             this.colidMovie.Name = "colidMovie";
-            this.colidMovie.Width = 117;
+            this.colidMovie.Width = 100;
             // 
             // coltitle
             // 
+            this.coltitle.Caption = "Título";
             this.coltitle.FieldName = "title";
-            this.coltitle.MinWidth = 31;
+            this.coltitle.MinWidth = 27;
             this.coltitle.Name = "coltitle";
             this.coltitle.Visible = true;
             this.coltitle.VisibleIndex = 0;
-            this.coltitle.Width = 117;
+            this.coltitle.Width = 100;
             // 
             // colidWriter
             // 
             this.colidWriter.Caption = "Escritor";
             this.colidWriter.ColumnEdit = this.rlupWriter;
             this.colidWriter.FieldName = "idWriter";
-            this.colidWriter.MinWidth = 31;
+            this.colidWriter.MinWidth = 27;
             this.colidWriter.Name = "colidWriter";
             this.colidWriter.Visible = true;
             this.colidWriter.VisibleIndex = 1;
-            this.colidWriter.Width = 117;
+            this.colidWriter.Width = 100;
             // 
             // colidDirector
             // 
             this.colidDirector.Caption = "Director";
             this.colidDirector.ColumnEdit = this.rlupDirector;
             this.colidDirector.FieldName = "idDirector";
-            this.colidDirector.MinWidth = 31;
+            this.colidDirector.MinWidth = 27;
             this.colidDirector.Name = "colidDirector";
             this.colidDirector.Visible = true;
             this.colidDirector.VisibleIndex = 2;
-            this.colidDirector.Width = 117;
+            this.colidDirector.Width = 100;
             // 
             // colidProducer
             // 
             this.colidProducer.Caption = "Productor";
             this.colidProducer.ColumnEdit = this.rlupProducer;
             this.colidProducer.FieldName = "idProducer";
-            this.colidProducer.MinWidth = 31;
+            this.colidProducer.MinWidth = 27;
             this.colidProducer.Name = "colidProducer";
             this.colidProducer.Visible = true;
             this.colidProducer.VisibleIndex = 3;
-            this.colidProducer.Width = 117;
+            this.colidProducer.Width = 100;
             // 
             // colavailable
             // 
             this.colavailable.FieldName = "available";
-            this.colavailable.MinWidth = 31;
+            this.colavailable.MinWidth = 27;
             this.colavailable.Name = "colavailable";
-            this.colavailable.Width = 117;
+            this.colavailable.Width = 100;
             // 
             // gcMovies
             // 
-            this.gcMovies.DataSource = this.moviesBindingSource;
+            this.gcMovies.DataSource = this.peliculaBindingSource;
             this.gcMovies.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcMovies.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gcMovies.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gcMovies.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gcMovies.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gcMovies.EmbeddedNavigator.Buttons.Remove.Visible = false;
-            this.gcMovies.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gcMovies.Location = new System.Drawing.Point(0, 33);
+            this.gcMovies.Location = new System.Drawing.Point(0, 28);
             this.gcMovies.MainView = this.gvMovies;
-            this.gcMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcMovies.Name = "gcMovies";
             this.gcMovies.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.rlupWriter,
             this.rlupDirector,
             this.rlupProducer});
-            this.gcMovies.Size = new System.Drawing.Size(728, 458);
+            this.gcMovies.Size = new System.Drawing.Size(624, 347);
             this.gcMovies.TabIndex = 4;
             this.gcMovies.UseEmbeddedNavigator = true;
             this.gcMovies.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMovies});
+            this.gcMovies.Click += new System.EventHandler(this.gcMovies_Click);
+            // 
+            // peliculaBindingSource
+            // 
+            this.peliculaBindingSource.DataSource = typeof(BML.Pelicula);
             // 
             // bar4
             // 
@@ -271,7 +265,7 @@ namespace PVL
             // 
             // btnLoad
             // 
-            this.btnLoad.Caption = "Load";
+            this.btnLoad.Caption = "Cargar Registros";
             this.btnLoad.Id = 0;
             this.btnLoad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLoad.ImageOptions.Image")));
             this.btnLoad.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoad.ImageOptions.LargeImage")));
@@ -280,7 +274,7 @@ namespace PVL
             // 
             // btnAdd
             // 
-            this.btnAdd.Caption = "Add";
+            this.btnAdd.Caption = "Agregar";
             this.btnAdd.Id = 1;
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.LargeImage")));
@@ -289,7 +283,7 @@ namespace PVL
             // 
             // btnEdit
             // 
-            this.btnEdit.Caption = "Edit";
+            this.btnEdit.Caption = "Editar";
             this.btnEdit.Id = 2;
             this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
             this.btnEdit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.LargeImage")));
@@ -298,7 +292,7 @@ namespace PVL
             // 
             // btnDrop
             // 
-            this.btnDrop.Caption = "Drop Down";
+            this.btnDrop.Caption = "Eliminar";
             this.btnDrop.Id = 3;
             this.btnDrop.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDrop.ImageOptions.Image")));
             this.btnDrop.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDrop.ImageOptions.LargeImage")));
@@ -311,56 +305,62 @@ namespace PVL
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(728, 33);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlTop.Size = new System.Drawing.Size(624, 28);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 491);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 375);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(728, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(624, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 33);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 458);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 347);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(728, 33);
+            this.barDockControlRight.Location = new System.Drawing.Point(624, 28);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 458);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 347);
             // 
             // frmMovies
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 491);
+            this.ClientSize = new System.Drawing.Size(624, 375);
             this.Controls.Add(this.gcMovies);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.IconOptions.Image = global::PVL.Properties.Resources.moviesIcon;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMovies";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lista de peliculas";
+            this.Text = "Lista de películas";
             this.Load += new System.EventHandler(this.frmMovies_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.directorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.producerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
+            this.Shown += new System.EventHandler(this.frmMovies_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.rlupWriter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlupDirector)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.directorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlupProducer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMovies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMovies)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peliculaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -369,11 +369,6 @@ namespace PVL
 
         #endregion
         private DevExpress.XtraBars.Bar bar1;
-        private System.Windows.Forms.BindingSource movieBindingSource;
-        private System.Windows.Forms.BindingSource writerBindingSource;
-        private System.Windows.Forms.BindingSource directorBindingSource;
-        private System.Windows.Forms.BindingSource producerBindingSource;
-        private System.Windows.Forms.BindingSource moviesBindingSource;
         private DevExpress.XtraGrid.GridControl gcMovies;
         private DevExpress.XtraGrid.Views.Grid.GridView gvMovies;
         private DevExpress.XtraGrid.Columns.GridColumn colidMovie;
@@ -396,5 +391,9 @@ namespace PVL
         private DevExpress.XtraBars.BarButtonItem btnAdd;
         private DevExpress.XtraBars.BarButtonItem btnEdit;
         private DevExpress.XtraBars.BarButtonItem btnDrop;
+        private System.Windows.Forms.BindingSource peliculaBindingSource;
+        private System.Windows.Forms.BindingSource writerBindingSource;
+        private System.Windows.Forms.BindingSource directorBindingSource;
+        private System.Windows.Forms.BindingSource producerBindingSource;
     }
 }

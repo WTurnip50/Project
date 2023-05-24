@@ -1,12 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PVL
@@ -28,11 +23,24 @@ namespace PVL
         {
 
         }
-        private void Message(int code) {
+
+        private void MdiParent_MdiChildActivate(object sender, EventArgs e)
+        {
+            BeginInvoke(new Action(() => {
+                //...
+                splashScreenManager1.ShowWaitForm();
+                splashScreenManager1.SetWaitFormCaption("Please wait");
+                splashScreenManager1.SetWaitFormDescription("iniciando formulario");
+                //...
+                splashScreenManager1.CloseWaitForm();
+            }));
+        }
+        private void Message(int code)
+        {
             switch (code)
             {
                 case 1:
-                    XtraMessageBox.Show("No cuenta con permisos avanzados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("El usuario no cuenta con permisos avanzados. ", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 default:
                     break;
@@ -55,12 +63,12 @@ namespace PVL
             }
             else
             {
-                frmMovies frm = new frmMovies();
+                frmMovies frm = new frmMovies(this.SU);
                 frm.MdiParent = this;
                 frm.Show();
             }
 
-            
+
         }
 
         private void btnDirectors_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -83,7 +91,7 @@ namespace PVL
                 frmDirector frm = new frmDirector();
                 frm.MdiParent = this;
                 frm.Show();
-            } 
+            }
         }
 
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -134,11 +142,21 @@ namespace PVL
                 frmWriters frmWriters = new frmWriters();
                 frmWriters.MdiParent = this;
                 frmWriters.Show();
-            } 
+            }
+            //foreach(Form form in Application.OpenForms)
+            //{
+            //    if(form.GetType() == typeof(frmWriters))
+            //    {
+            //        form.Activate();
+            //        return;
+            //    }
+            //}
+            //new frmWriters() { MdiParent = this }.Show();
         }
 
         private void btnNewUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
             if (!this.SU)
             {
                 Message(1);
@@ -148,7 +166,7 @@ namespace PVL
                 frmNUser frmN = new frmNUser();
                 frmN.ShowDialog();
             }
-            
+
         }
 
         private void btnNewPass_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -162,7 +180,7 @@ namespace PVL
                 frmNewPass frm = new frmNewPass();
                 frm.ShowDialog();
             }
-            
+
         }
 
         private void btnProducers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -185,7 +203,7 @@ namespace PVL
                 frmProducer frm = new frmProducer();
                 frm.MdiParent = this;
                 frm.Show();
-            } 
+            }
         }
     }
 }

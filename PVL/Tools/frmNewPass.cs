@@ -1,21 +1,13 @@
-﻿using BLL;
-using BOL;
+﻿using BML;
 using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PVL
 {
     public partial class frmNewPass : DevExpress.XtraEditors.XtraForm
     {
-        private UserBLL userBLL = UserBLL.Instance();
+        //private UserBLL userBLL = UserBLL.Instance();
         private int id = 0;
         private bool Find = false;
         public frmNewPass()
@@ -29,7 +21,7 @@ namespace PVL
             switch (code)
             {
                 case 1:
-                    XtraMessageBox.Show("Usuario encontrado.","Busqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Usuario encontrado.", "Busqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtPass.Visible = true;
                     this.txtPass2.Visible = true;
                     this.txtName.Enabled = false;
@@ -55,8 +47,9 @@ namespace PVL
         }
         private void find()
         {
-            User user = userBLL.checkAvaliable(new BOL.User() { username = txtName.Text.Trim() });
-            if (user!=null) {
+            User user = new User() { username = txtName.Text.Trim() }.GetByUser();
+            if (user != null)
+            {
                 this.Find = true;
                 this.id = user.idUser;
                 Message(1);
@@ -66,7 +59,6 @@ namespace PVL
         {
             this.txtPass.Visible = false;
             this.txtPass2.Visible = false;
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -82,11 +74,16 @@ namespace PVL
             {
                 if (txtPass.Text.Trim().Equals(txtPass2.Text.Trim()))
                 {
-                    if(XtraMessageBox.Show("Desea realizar los cambios","Advertencia",
+                    if (XtraMessageBox.Show("Desea realizar los cambios", "Advertencia",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.No)
                     {
-                        if (userBLL.newPassword(new BOL.User() { username = txtName.Text.Trim(),
-                            idUser = this.id, password = txtPass.Text.Trim() })) {
+                        if (new User()
+                        {
+                            username = txtName.Text.Trim(),
+                            idUser = this.id,
+                            password = txtPass.Text.Trim()
+                        }.newPass() > 0)
+                        {
                             Message(3);
                             this.Close();
                         }

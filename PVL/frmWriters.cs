@@ -1,20 +1,12 @@
-﻿using BLL;
+﻿using BML;
 using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PVL
 {
     public partial class frmWriters : DevExpress.XtraEditors.XtraForm
     {
-        private WriterBLL writerBLL = WriterBLL.Instance();
         public frmWriters()
         {
             InitializeComponent();
@@ -27,12 +19,13 @@ namespace PVL
 
         private void CargarRegistros()
         {
-            gcWriter.DataSource = writerBLL.GetAll();
+            gcWriter.DataSource = new Writer().GetAll();
         }
         private void Add()
         {
             frmAddWriter frmAddWriter = new frmAddWriter();
             frmAddWriter.ShowDialog();
+            CargarRegistros();
         }
 
         private void Edit()
@@ -52,7 +45,7 @@ namespace PVL
             }
             else
             {
-                if (writerBLL.Disable(new BOL.Writer() { idWriter = row }))
+                if (new Writer(){ idWriter = row }.Delete() > 0)
                 {
                     XtraMessageBox.Show("Operación Exitosa", "Aviso", MessageBoxButtons.OK);
                 }

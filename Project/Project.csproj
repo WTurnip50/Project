@@ -191,16 +191,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{abb1b7c8-f3d0-48a1-b982-b89d63035e5b}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BOL\BOL.csproj">
-      <Project>{2809f380-b112-4512-91b4-14d93c57e8b9}</Project>
-      <Name>BOL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Splash_Screen_Logo.png" />
   </ItemGroup>
   <ItemGroup>
