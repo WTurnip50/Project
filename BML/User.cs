@@ -48,5 +48,11 @@ namespace BML
             parametros.Add("@su", SU);
             return dataAccess.Execute("Users_NewUser", parametros);
         }
+
+        public IEnumerable<User> GetAll()
+        {
+            return dataAccess.Query<User>("User_GetAll");
+        }
+
     }
 }

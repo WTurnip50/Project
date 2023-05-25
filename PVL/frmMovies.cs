@@ -8,16 +8,17 @@ namespace PVL
 {
     public partial class frmMovies : DevExpress.XtraEditors.XtraForm
     {
-
+        private int idUser = 0;
         public frmMovies()
         {
             InitializeComponent();
         }
-        public frmMovies(bool su)
+        public frmMovies(bool su, int idUser)
         {
             InitializeComponent();
             this.btnEdit.Enabled = su;
             this.btnDrop.Enabled = su;
+            this.idUser = idUser;
         }
 
         private void frmMovies_Load(object sender, EventArgs e)
@@ -104,8 +105,12 @@ namespace PVL
 
         private void btnCart_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShoppingCart cart = new ShoppingCart();
-            cart.ShowDialog();
+            int row = (int)gvMovies.GetFocusedRowCellValue(colidMovie);
+            decimal precio = (decimal)gvMovies.GetFocusedRowCellValue(colprecio);
+            if(new Cart() {idMovie = row, precio = precio, idUser = this.idUser}.Add() > 0)
+            {
+                XtraMessageBox.Show("Agregado al carrito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

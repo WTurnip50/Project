@@ -9,19 +9,22 @@ namespace PVL
     public partial class frmMenu : DevExpress.XtraEditors.XtraForm
     {
         private bool SU = false;
+        private bool Expandir = true;
+        private int idUser = 0;
         public frmMenu()
         {
             InitializeComponent();
         }
-        public frmMenu(bool SU)
+        public frmMenu(bool SU, int idUser)
         {
             InitializeComponent();
             this.SU = SU;
+            this.idUser = idUser;
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void MdiParent_MdiChildActivate(object sender, EventArgs e)
@@ -63,7 +66,7 @@ namespace PVL
             }
             else
             {
-                frmMovies frm = new frmMovies(this.SU);
+                frmMovies frm = new frmMovies(this.SU, this.idUser);
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -73,25 +76,7 @@ namespace PVL
 
         private void btnDirectors_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmDirector);
-            if (frmo != null)
-            {
-                foreach (Form frmOpen in Application.OpenForms)
-                {
-                    if (frmOpen.GetType() == typeof(frmDirector))
-                    {
-                        frmOpen.Focus();
-                        frmOpen.WindowState = FormWindowState.Maximized;
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                frmDirector frm = new frmDirector();
-                frm.MdiParent = this;
-                frm.Show();
-            }
+           
         }
 
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -124,25 +109,7 @@ namespace PVL
 
         private void btnWriters_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmWriters);
-            if (frmo != null)
-            {
-                foreach (Form frmOpen in Application.OpenForms)
-                {
-                    if (frmOpen.GetType() == typeof(frmWriters))
-                    {
-                        frmOpen.Focus();
-                        frmOpen.WindowState = FormWindowState.Maximized;
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                frmWriters frmWriters = new frmWriters();
-                frmWriters.MdiParent = this;
-                frmWriters.Show();
-            }
+          
             //foreach(Form form in Application.OpenForms)
             //{
             //    if(form.GetType() == typeof(frmWriters))
@@ -185,6 +152,57 @@ namespace PVL
 
         private void btnProducers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+           
+        }
+
+        private void btnMovies_Click(object sender, EventArgs e)
+        {
+            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmMovies);
+            if (frmo != null)
+            {
+                foreach (Form frmOpen in Application.OpenForms)
+                {
+                    if (frmOpen.GetType() == typeof(frmMovies))
+                    {
+                        frmOpen.Focus();
+                        frmOpen.WindowState = FormWindowState.Maximized;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                frmMovies frm = new frmMovies(this.SU, this.idUser);
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void btnWriters_Click(object sender, EventArgs e)
+        {
+            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmWriters);
+            if (frmo != null)
+            {
+                foreach (Form frmOpen in Application.OpenForms)
+                {
+                    if (frmOpen.GetType() == typeof(frmWriters))
+                    {
+                        frmOpen.Focus();
+                        frmOpen.WindowState = FormWindowState.Maximized;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                frmWriters frmWriters = new frmWriters();
+                frmWriters.MdiParent = this;
+                frmWriters.Show();
+            }
+        }
+
+        private void btnProducers_Click(object sender, EventArgs e)
+        {
             Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmProducer);
             if (frmo != null)
             {
@@ -204,6 +222,55 @@ namespace PVL
                 frm.MdiParent = this;
                 frm.Show();
             }
+        }
+
+        private void btnDirectors_Click(object sender, EventArgs e)
+        {
+            Form frmo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmDirector);
+            if (frmo != null)
+            {
+                foreach (Form frmOpen in Application.OpenForms)
+                {
+                    if (frmOpen.GetType() == typeof(frmDirector))
+                    {
+                        frmOpen.Focus();
+                        frmOpen.WindowState = FormWindowState.Maximized;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                frmDirector frm = new frmDirector();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMenu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Expandir)
+            {
+                panelMenu.Width = 0;
+                Expandir = false;
+            }
+            else
+            {
+                panelMenu.Width = 151;
+                Expandir = true;
+            }
+            
+        }
+
+        private void btnShoppingCart_Click(object sender, EventArgs e)
+        {
+            ShoppingCart cart = new ShoppingCart(this.idUser);
+            cart.ShowDialog();
         }
     }
 }

@@ -223,9 +223,12 @@
       <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\BML.Cart.datasource" />
     <None Include="Properties\DataSources\BML.Director.datasource" />
     <None Include="Properties\DataSources\BML.Pelicula.datasource" />
     <None Include="Properties\DataSources\BML.Producer.datasource" />
+    <None Include="Properties\DataSources\BML.Sales.datasource" />
+    <None Include="Properties\DataSources\BML.User.datasource" />
     <None Include="Properties\DataSources\BML.Writer.datasource" />
     <None Include="Properties\DataSources\BOL.Director.datasource" />
     <None Include="Properties\DataSources\BOL.Movie.datasource" />
@@ -253,6 +256,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\directorIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\writerIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moviesIcon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\producerIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

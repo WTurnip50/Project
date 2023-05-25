@@ -33,7 +33,7 @@ namespace PVL
                 sm.ShowWaitForm();
                 this.Hide();
                 sm.CloseWaitForm();
-                frmMenu frm = new frmMenu(user.SU);
+                frmMenu frm = new frmMenu(user.SU, user.idUser);
                 frm.Show();
             }
             else
