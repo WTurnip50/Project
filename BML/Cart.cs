@@ -46,11 +46,11 @@ namespace BML
             parametros.Add("@idUser", this.idUser);
             return dataAccess.Execute("ShoppingCart_SaleComplete", parametros);
         }
-        public Cart GetByID()
+        public IEnumerable<Cart>GetByID()
         {
             var parametros = new DynamicParameters();
-            parametros.Add("@idCart", idCart);
-            return dataAccess.QuerySingle<Cart>("ShoppingCart_getByID", parametros);
+            parametros.Add("@idUser", idUser);
+            return dataAccess.Query<Cart>("ShoppingCart_GetByID", parametros);
         }
         public IEnumerable<Cart> GetAll()
         {

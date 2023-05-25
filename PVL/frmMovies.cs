@@ -45,7 +45,6 @@ namespace PVL
         private void Edit()
         {
             int row = (int)gvMovies.GetFocusedRowCellValue(colidMovie);
-            XtraMessageBox.Show("El valor es: " + row, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             frmAddMovie frm = new frmAddMovie(row);
             frm.ShowDialog();
         }
@@ -80,16 +79,19 @@ namespace PVL
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Add();
+            CargarRegistros();
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Edit();
+            CargarRegistros();
         }
 
         private void btnDrop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Dropdown();
+            CargarRegistros();
         }
 
         private void gcMovies_Click(object sender, EventArgs e)
@@ -99,8 +101,6 @@ namespace PVL
 
         private void frmMovies_Shown(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
-            SplashScreenManager.CloseForm();
         }
 
         private void btnCart_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

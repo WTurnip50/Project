@@ -33,7 +33,6 @@ namespace PVL
             {
                 total += decimal.Parse(gvCart.GetRowCellValue(i, colprecio).ToString());
             }
-            MessageBox.Show("total: " + total);
             Sale sale = new Sale(idUser, total);
             if(sale.ShowDialog() == DialogResult.OK)
             {
@@ -47,7 +46,7 @@ namespace PVL
 
         private void CargarCarrito()
         {
-           gcCart.DataSource = new Cart().GetAll();
+            gcCart.DataSource = new Cart() { idUser = this.idUser}.GetByID();
            lupUser.DataSource = new User().GetAll();
            lupMovie.DataSource = new Pelicula().GetAll();
            gvCart.BestFitColumns();

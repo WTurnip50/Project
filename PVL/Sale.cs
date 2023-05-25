@@ -30,6 +30,7 @@ namespace PVL
             this.lblSubtotal.Text = "" + this.subtotal;
             this.lblTotal.Visible = false;
             this.txtEfectivo.Enabled = false;
+            this.btnSale.Text = "Aplicar descuento";
         }
 
         private void Sale_Load(object sender, EventArgs e)
@@ -52,19 +53,38 @@ namespace PVL
                     this.txtDescuento.Enabled = false;
                     this.txtEfectivo.Enabled = true;
                     this.txtEfectivo.Focus();
+                    this.btnSale.Text = "Realizar compra";
                     return;
                 }
-                XtraMessageBox.Show("El campo no puede estar vacio", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+                    this.total = this.subtotal;
+                    this.lblTotal.Text = "" + this.total;
+                    lblTotal.Visible = true;
+                    this.Pay = true;
+                    this.txtDescuento.Enabled = false;
+                    this.txtEfectivo.Enabled = true;
+                    this.txtEfectivo.Focus();
+                    this.btnSale.Text = "Realizar compra";
+                    return;
+                }
             }
             else
             {
                 if (!txtEfectivo.Text.Trim().Equals(""))
                 {
-                    if(new Sales() {idUser = this.idUser, total = this.total, fecha = DateTime.Now }.Add()>0)
+                    if (decimal.Parse(txtEfectivo.EditValue.ToString()) >= this.total)
                     {
-                        XtraMessageBox.Show("Venta exitosa",Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (new Sales() { idUser = this.idUser, total = this.total, fecha = DateTime.Now }.Add() > 0)
+                        {
+                            XtraMessageBox.Show("Venta exitosa", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Efectivo Insuficiente", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }

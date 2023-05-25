@@ -31,7 +31,6 @@ namespace PVL
         private void Edit()
         {
             int row = (int)gvWriter.GetFocusedRowCellValue(colidWriter);
-            XtraMessageBox.Show("El valor es: " + row, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             frmAddWriter frm = new frmAddWriter(row);
             frm.ShowDialog();
         }
@@ -61,16 +60,19 @@ namespace PVL
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Add();
+            CargarRegistros();
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Edit();
+            CargarRegistros();
         }
 
         private void btnDrop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Drop();
+            CargarRegistros();
         }
     }
 }
