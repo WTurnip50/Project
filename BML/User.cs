@@ -30,7 +30,7 @@ namespace BML
         {
             var parametros = new DynamicParameters();
             parametros.Add("@nombre", username);
-            return dataAccess.QuerySingle<User>("FindUser", parametros);
+            return dataAccess.QuerySingleOrDefault<User>("FindUser", parametros);
         }
         public int newPass()
         {

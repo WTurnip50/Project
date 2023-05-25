@@ -11,6 +11,11 @@ namespace PVL
         {
             InitializeComponent();
         }
+        public frmDirector(bool su)
+        {
+            InitializeComponent();
+            this.btnDrop.Enabled = su;
+        }
         private void CargarRegistros()
         {
             gcDirector.DataSource = new Director().GetAll();

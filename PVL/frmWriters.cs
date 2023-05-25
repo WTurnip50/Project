@@ -11,6 +11,11 @@ namespace PVL
         {
             InitializeComponent();
         }
+        public frmWriters(bool su)
+        {
+            InitializeComponent();
+            this.btnDrop.Enabled = su;
+        }
 
         private void frmWriters_Load(object sender, EventArgs e)
         {

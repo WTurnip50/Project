@@ -28,7 +28,6 @@ namespace PVL
 
         private void CargarRegistros()
         {
-            //gcMovies.DataSource = movieBLL.GetAll();
             peliculaBindingSource1.DataSource = new Pelicula().GetAll();
             gvMovies.BestFitColumns();
             rlupWriter.DataSource = new Writer().GetAll();

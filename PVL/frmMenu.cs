@@ -74,11 +74,6 @@ namespace PVL
 
         }
 
-        private void btnDirectors_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-           
-        }
-
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
@@ -105,20 +100,6 @@ namespace PVL
                     }
                 }
             }
-        }
-
-        private void btnWriters_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-          
-            //foreach(Form form in Application.OpenForms)
-            //{
-            //    if(form.GetType() == typeof(frmWriters))
-            //    {
-            //        form.Activate();
-            //        return;
-            //    }
-            //}
-            //new frmWriters() { MdiParent = this }.Show();
         }
 
         private void btnNewUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -148,11 +129,6 @@ namespace PVL
                 frm.ShowDialog();
             }
 
-        }
-
-        private void btnProducers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-           
         }
 
         private void btnMovies_Click(object sender, EventArgs e)
@@ -195,7 +171,7 @@ namespace PVL
             }
             else
             {
-                frmWriters frmWriters = new frmWriters();
+                frmWriters frmWriters = new frmWriters(this.SU);
                 frmWriters.MdiParent = this;
                 frmWriters.Show();
             }
@@ -218,7 +194,7 @@ namespace PVL
             }
             else
             {
-                frmProducer frm = new frmProducer();
+                frmProducer frm = new frmProducer(this.SU);
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -241,7 +217,7 @@ namespace PVL
             }
             else
             {
-                frmDirector frm = new frmDirector();
+                frmDirector frm = new frmDirector(this.SU);
                 frm.MdiParent = this;
                 frm.Show();
             }

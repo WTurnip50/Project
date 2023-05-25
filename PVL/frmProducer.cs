@@ -14,6 +14,12 @@ namespace PVL
             InitializeComponent();
             load();
         }
+        public frmProducer(bool su)
+        {
+            InitializeComponent();
+            load();
+            this.btnDrop.Enabled = su;
+        }
 
         private void load()
         {

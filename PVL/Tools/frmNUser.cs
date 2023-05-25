@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using BML;
+using DevExpress.XtraEditors;
 using System;
 using System.Windows.Forms;
 
@@ -6,18 +7,18 @@ namespace PVL
 {
     public partial class frmNUser : DevExpress.XtraEditors.XtraForm
     {
-        //private UserBLL userBLL = UserBLL.Instance();
-        //private bool SU = false;
+        
+        private bool SU = false;
         public frmNUser()
         {
             InitializeComponent();
         }
         private void Save(bool SU)
         {
-            //if (userBLL.newUser(new BOL.User { username = txtName.Text.Trim(), password = txtPass.Text.Trim(), SU = SU }))
-            //{
-            //    Message(1);
-            //}
+            if (new User() { username = txtName.Text.Trim(),password = txtPass.Text.Trim(), SU = this.SU}.newUser()>0)
+            {
+                Message(1);
+            }
         }
         private void Message(int type)
         {
@@ -41,44 +42,44 @@ namespace PVL
             }
         }
 
-        //private bool available()
-        //{
-        //    //if (userBLL.checkAvaliable(new BOL.User() { username = this.txtName.Text.Trim() }) == null)
-        //    //{
-        //    //    Message(4);
-        //    //    return false;
-        //    //}
-        //    //else
-        //    //{
-        //    //    this.txtName.Focus();
-        //    //    Message(3);
-        //    //    return true;
-        //    //}
-        //}
+        private bool available()
+        {
+            if (new User() {username = txtName.Text.Trim() }.GetByUser() != null)
+            {
+                Message(3);
+                return true;
+            }
+            else
+            {
+                this.txtName.Focus();
+                Message(4);
+                return false;
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //this.SU = (bool) cbSU.EditValue;
+            this.SU = (bool) cbSU.EditValue;
 
 
-            //if (!available())
-            //{
-            //    if (!this.SU)
-            //    {
-            //        Save(this.SU);
-            //    }
-            //    else
-            //    {
-            //        if (XtraMessageBox.Show("¿Desea otorgar permisos avanzados al usuario?",
-            //        "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.No)
-            //        {
-            //            Save(this.SU);
-            //        }
-            //        else
-            //        {
-            //            Message(2);
-            //        }
-            //    }
-            //}
+            if (!available())
+            {
+                if (!this.SU)
+                {
+                    Save(this.SU);
+                }
+                else
+                {
+                    if (XtraMessageBox.Show("¿Desea otorgar permisos avanzados al usuario?",
+                    "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.No)
+                    {
+                        Save(this.SU);
+                    }
+                    else
+                    {
+                        Message(2);
+                    }
+                }
+            }
 
         }
 
